@@ -55,7 +55,9 @@ body {
 h2 {
     font-family: var(--kopjes);
     font-weight: bold;
-    font-size: clamp(1.5em, 3vw, 3em );
+    font-size: clamp(1em, 2vw, 2em);
+    margin-bottom: 1em;
+    color: var(--button-kleur);
 }
 
 /* Header */
@@ -63,9 +65,19 @@ header nav ol {
     display: flex;
 
 }
-
 fieldset {
-    border: transparent;
+  border: transparent;  
+}
+
+/* Elke section  */
+form > fieldset fieldset:first-of-type {
+    
+    border-bottom: 3px solid var(--form-achtergrond-kleur);
+    padding-bottom: 1em;
+}
+
+button {
+    font-size: 1em;
 }
 
 /********/
@@ -77,7 +89,20 @@ main {
     width: 100%;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+   
+   
+}
 
+/* @supports (display:grid) {
+    form {
+            display: grid;
+            place-items: center;
+            width: 100%;
+        }
+} */
 
 form>fieldset {
     display: flex;
@@ -137,7 +162,12 @@ form>fieldset>fieldset:nth-of-type(n+2) span {
 }
 
 
-
+/* De vragen */
+form > fieldset  fieldset p, 
+form > fieldset > fieldset> label{
+color: var(--font-size-paragraaf);
+ margin-bottom: 1em;
+}
 /* body form  fieldset:nth-child(1) > fieldset :has(input[type="radio"]:checked)  {
  /* padding: 1em; */
 /* background-color: var(--main-kleur); 
@@ -149,7 +179,7 @@ form>fieldset>fieldset:nth-of-type(n+2) span {
 /*******************/
 #studentgegevens fieldset {
     gap: 1em;
-   
+
 }
 
 label[for="voornaam"],
@@ -185,10 +215,38 @@ input[type="email"]:invalid {
 
 input[type="email"]:valid {
     border: 1px solid var(--valid-form-data-kleur);
-
-
 }
 
 input:required {
     border: 1px dashed var(--invalid-form-data-kleur);
+}
+
+
+/**********************/
+/* FORMULIER BUTTONS  */
+/**********************/
+form > ul {
+    display: flex;
+    align-self: center;
+}
+
+
+/* Volgende Button */
+button[type="submit"] {
+    border: 1px solid var(--button-kleur);
+    padding: 1em 1.5em;
+    background-color: var(--button-kleur);
+    color: var(--form-achtergrond-kleur);
+    font-family: var(--font-size-paragraaf);
+
+}
+
+/* Vorige button */
+a.vorige-btn {
+    display: inline-block;
+    padding: 1em 1.5em;
+    color: var(--tekst-kleur);
+   border: 1px solid var(--button-kleur);
+    
+    text-decoration: none;
 }
