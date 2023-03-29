@@ -44,3 +44,5 @@ Briefing van de server side
 - Kijken wat niet wekren op 
 - Wat moet de server doen
 - Voorbeeldpagina maken
+
+---
