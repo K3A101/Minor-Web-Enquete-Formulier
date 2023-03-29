@@ -1,0 +1,184 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    /* Lettertype */
+    --paragraaf: 'interstate', 'Arial', 'Helvetica', sans-serif;
+    --kopjes: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
+    --font-size-paragraaf: 1em;
+    --font-size-kopje: 2em;
+
+    /* Kleurpalette */
+    --main-kleur: #df9ff9;
+    --form-achtergrond-kleur: #f1e9f4;
+    --achtergrond-kleur: white;
+
+    --button-kleur: #370152;
+    --tekst-kleur: #261e29;
+
+
+    /* Form validatie */
+    --valid-form-data-kleur: mediumseagreen;
+    --invalid-form-data-kleur: lightsalmon;
+
+    --input-kleur: rgb(246, 246, 246);
+    
+    
+}
+
+
+br {
+    display: none;
+}
+li {
+    list-style: none;
+}
+
+/* input[type="radio"] {
+    appearance: none;
+} */
+
+body {
+    background-color: var(--achtergrond-kleur);
+    background-color: #f1e9f4;
+    font-family: var(--paragraaf);
+    font-weight: 400;
+
+}
+
+h2 {
+    font-family: var(--kopjes);
+    font-weight: bold;
+}
+
+/* Header */
+header nav ol {
+    display: flex;
+
+}
+
+fieldset {
+    border: transparent;
+}
+
+/********/
+/* FORM */
+/********/
+
+/* Form */
+main {
+    width: 100%;
+}
+
+
+
+form>fieldset {
+    margin: 2em .5em;
+    padding: 1em;
+    background-color: var(--achtergrond-kleur);
+}
+
+/* inputs */
+textarea {
+    width: 100%;
+}
+
+input {
+    background-color: var(--input-kleur);
+}
+input[type="text"]{
+    padding: 1em;
+}
+
+/* Radio button */
+input[type="radio"] {
+    position: absolute;
+  opacity: 0;
+    width: 2em;
+    height: 2em;
+}
+
+ input:checked + span {
+    display: inline-block;
+     /* background-color: #370152; */
+     background-color: var(--main-kleur);
+     /* padding: 1em; */
+     
+  }
+
+/* Alle radio buttons */
+form > fieldset > fieldset:nth-of-type(n+2) ul   {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    gap: 1em;
+}
+
+form>fieldset>fieldset:nth-of-type(n+2) span{
+ padding: 1em;
+}
+
+@supports (display: grid){
+form>fieldset>fieldset:nth-of-type(n+2) ul {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+}
+
+/* body form  fieldset:nth-child(1) > fieldset :has(input[type="radio"]:checked)  {
+ /* padding: 1em; */
+    /* background-color: var(--main-kleur); 
+}*/
+
+
+/*******************/
+/* STUDENTGEGEVENS */
+/*******************/
+label[for="voornaam"],
+label[for="achternaam"],
+label[for="studentennummer"],
+label[for="email"] {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+
+input[type="tel"], 
+input[type="email"]{
+    padding: 1em;
+}
+
+
+
+
+/******************/
+/* FORM VALILDATE */
+/******************/
+
+
+
+
+/* Formulier Validatie */
+input[type="email"]:invalid {
+    border: 1px solid red;
+
+}
+
+input[type="email"]:valid {
+    border: 1px solid var(--valid-form-data-kleur);
+    
+
+}
+
+input:required {
+    border: 1px dashed var(--invalid-form-data-kleur);
+}
+

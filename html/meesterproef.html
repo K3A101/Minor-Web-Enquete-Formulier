@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <!-- Fonts -->
+    <!-- Opens Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Interstate -->
+    <link rel="stylesheet" href="https://use.typekit.net/pxn6jyw.css">
+    <!-- <meta name="color-scheme" content="light dark"> -->
+    <title>Enquete voor minor</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ol>
+                <li>Intro</li>
+                <li>Vak 1</li>
+                <li>Vak 2</li>
+                <li>Vak 3</li>
+                <li>Vak 4</li>
+                <li>Vak 5</li>
+                <li>Vak 6</li>
+                <li>Vak 7</li>
+                <li>Vak 8</li>
+            </ol>
+        </nav>
+
+    </header>
+    <main>
+        <h1>Enquete voor Minor Web</h1>
+
+        <form>
+            <!-- Studentgegevens -->
+            <!-- Meesterproef -->
+            <fieldset>
+                <h2>Vak 7</h2>
+                <legend> Geef je mening op de Meesterproef </legend>
+                <h2>Meesterproef</h2>
+                <p>De docenten voor de Meesterproef waren <b>Justus Sturkenboom</b> <b>Vasilis van Gemert</b>,<b>Sanne
+                        't' Hooft</b>, <b>Janno Kapritsias</b>, <b>Joost Faber</b>, <b>Robert Spier</b> en <b> Koop
+                        Reynders</b></p>
+            
+                <p>Geef je mening voor de Meesterproef</p>
+                <!-- Algemene mening-->
+            
+                <fieldset>
+                    <label for="meesterproef-beoordeling">Welke cijfer zou je deze vak geven?</label><br>
+                    <select name="meesterproef-beoordeling" id="meesterproef-beoordeling">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <br>
+                    <fieldset>
+            
+                        <legend>In welke week heb je deze vak gedaan?</legend>
+                        <label><input type="week" name="meesterproef-eerste-week"></label>
+                        <label><input type="week" name="meesterproef-laatste-week"></label>
+                    </fieldset>
+            
+            
+            
+                    <label for="meesterproef-algemene-mening">Wat vond van je van het vak? En wat kan beter?</label><br>
+                    <textarea name="meesterproef-lesstof" id="meesterproef-algemene mening" cols="80" rows="5"
+                        placeholder="Schrijft je mening.."></textarea>
+                </fieldset>
+            
+            
+                <!-- leesstof -->
+                <fieldset>
+                    <h2>Lesstof van de Meesterproef</h2>
+            
+            
+                    <!-- groepeer de radio buttons op basis van schaal van 1 tot 10-->
+                    <fieldset>
+                        <legend>Welke cijfer zou je geven aan de lesstof? Geef een cijfer tussen 1 tot en met 10
+                        </legend>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="radio" name="meesterproef-lesstof-beoordeling">
+                                    1
+                                </label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-lesstof-beoordeling">2</label></li>
+                            <li><label><input type="radio" name="meesterproef-lesstof-beoordeling">3</label></li>
+                            <li><label><input type="radio" name="meesterproef-lesstof-beoordeling">4</label></li>
+                            <li><label><input type="radio" name="meesterproef-lesstof-beoordeling">5</label></li>
+                            <li><label><input type="radio" name="meesterproef-lesstof-beoordeling">6</label></li>
+                            <li><label><input type="radio" name="meesterproef-lesstof-beoordeling">7</label></li>
+                            <li><label><input type="radio" name="meesterproef-lesstof-beoordeling">8</label></li>
+                            <li><label><input type="radio" name="meesterproef-lesstof-beoordeling">9</label></li>
+                            <li><label><input type="radio" name="meesterproef-lesstof-beoordeling">10</label></li>
+                        </ul>
+                    </fieldset>
+            
+                    <fieldset>
+                        <legend>1. Was de lesstof van de Meesterproef makkelijk om te volgen? </legend>
+                        <ul>
+                            <li><label> <input type="radio" name="meesterproef-moeilijkheid" value="Zeer moeilijk">Zeer
+                                    moeilijk</label></li>
+                            <li><label><input type="radio" name="meesterproef-moeilijkheid" value=" Moeilijk">Moeilijk</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-moeilijkheid" value="Neutraal">Neutraal</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-moeilijkheid" value="Makkelijk">Makkelijk</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-moeilijkheid" value="Zeer makkelijk">Zeer
+                                    makkelijk</label></li>
+                        </ul>
+            
+                    </fieldset>
+            
+                </fieldset>
+            
+                <!-- Uitleg -->
+                <fieldset>
+                    <h2>Uitleg van Meesterproef</h2>
+                    <fieldset>
+                        <legend>De uitleg van de docenten was heel duidelijk </legend>
+                        <ul>
+                            <li><label> <input type="radio" name="meesterproef-uitleg-duidelijkheid" value="Zeer oneens">Zeer
+                                    Oneens</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-duidelijkheid" value="Oneens">Oneens</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-duidelijkheid"
+                                        value="Neutraal">Neutraal</label></li>
+                            <li><label><input type="radio" name="hcd-uitleg-duidelijkheid" value="Eens">Eens</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-duidelijkheid" value="Zeer eens">Zeer
+                                    eens</label></li>
+                        </ul>
+            
+                    </fieldset>
+            
+                    <fieldset>
+                        <legend>Welke cijfer zou je geven aan de uitleg? Geef een cijfer tussen 1 tot en met 10
+                        </legend>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="radio" name="meesterproef-uitleg-beoordeling" value="1" id="1">
+                                    1
+                                </label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-beoordeling" value="2">2</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-beoordeling" value="3">3</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-beoordeling" value="4">4</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-beoordeling" value="5">5</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-beoordeling" value="6">6</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-beoordeling" value="7">7</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-beoordeling" value="8">8</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-beoordeling" value="9">9</label>
+                            </li>
+                            <li><label><input type="radio" name="meesterproef-uitleg-beoordeling" value="10">10</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </fieldset>
+                <ul>
+                    <li><a href="./human-centred-design.html">Vorige</a></li>
+                    <li><button class="opslaan" type="submit">Gegevens Opslaan</button></li>
+                    <li><a href="./weekly-nerd.html">Volgende</a></li>
+                </ul>
+            
+            </fieldset>
+
+        </form>
+    </main>
+
+
+
+</body>
+
+</html>
