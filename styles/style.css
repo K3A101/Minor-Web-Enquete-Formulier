@@ -27,14 +27,15 @@
     --invalid-form-data-kleur: lightsalmon;
 
     --input-kleur: rgb(246, 246, 246);
-    
-    
+
+
 }
 
 
 br {
     display: none;
 }
+
 li {
     list-style: none;
 }
@@ -54,6 +55,7 @@ body {
 h2 {
     font-family: var(--kopjes);
     font-weight: bold;
+    font-size: clamp(1.5em, 3vw, 3em );
 }
 
 /* Header */
@@ -78,6 +80,9 @@ main {
 
 
 form>fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
     margin: 2em .5em;
     padding: 1em;
     background-color: var(--achtergrond-kleur);
@@ -91,56 +96,62 @@ textarea {
 input {
     background-color: var(--input-kleur);
 }
-input[type="text"]{
+
+input[type="text"] {
     padding: 1em;
 }
 
 /* Radio button */
 input[type="radio"] {
     position: absolute;
-  opacity: 0;
-    width: 2em;
-    height: 2em;
+    appearance: none;
+
 }
 
- input:checked + span {
+input:checked+span {
     display: inline-block;
-     /* background-color: #370152; */
-     background-color: var(--main-kleur);
-     /* padding: 1em; */
-     
-  }
+    background-color: var(--main-kleur);
+}
 
 /* Alle radio buttons */
-form > fieldset > fieldset:nth-of-type(n+2) ul   {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-    gap: 1em;
-}
-
-form>fieldset>fieldset:nth-of-type(n+2) span{
- padding: 1em;
-}
-
-@supports (display: grid){
 form>fieldset>fieldset:nth-of-type(n+2) ul {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
 
+    display: flex;
+    /* flex-wrap: wrap; */
+    background-color: var(--input-kleur);
+
+    gap: .3em;
 }
 
+form>fieldset>fieldset:nth-of-type(n+2) ul li label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+form>fieldset>fieldset:nth-of-type(n+2) span {
+
+    padding: .5em;
+    /* width: 3em;
+ height: 3em; */
+}
+
+
 
 /* body form  fieldset:nth-child(1) > fieldset :has(input[type="radio"]:checked)  {
  /* padding: 1em; */
-    /* background-color: var(--main-kleur); 
+/* background-color: var(--main-kleur); 
 }*/
 
 
 /*******************/
 /* STUDENTGEGEVENS */
 /*******************/
+#studentgegevens fieldset {
+    gap: 1em;
+   
+}
+
 label[for="voornaam"],
 label[for="achternaam"],
 label[for="studentennummer"],
@@ -151,8 +162,8 @@ label[for="email"] {
 }
 
 
-input[type="tel"], 
-input[type="email"]{
+input[type="tel"],
+input[type="email"] {
     padding: 1em;
 }
 
@@ -174,11 +185,10 @@ input[type="email"]:invalid {
 
 input[type="email"]:valid {
     border: 1px solid var(--valid-form-data-kleur);
-    
+
 
 }
 
 input:required {
     border: 1px dashed var(--invalid-form-data-kleur);
 }
-
