@@ -140,7 +140,8 @@ input[type="text"] {
 input[type="radio"] {
     position: absolute;
     appearance: none;
-    left: -1000em;
+    opacity: 0;
+    /* left: -1000em; */
 
 }
 
