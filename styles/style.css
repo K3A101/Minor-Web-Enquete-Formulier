@@ -20,13 +20,14 @@
 
     --button-kleur: #370152;
     --tekst-kleur: #261e29;
-
+   /* --legend-kleur:  */
 
     /* Form validatie */
     --valid-form-data-kleur: mediumseagreen;
     --invalid-form-data-kleur: lightsalmon;
-
+    --radio-button-checked:#261e29;
     --input-kleur: rgb(246, 246, 246);
+    --label-kleur:#261e29;
 
 
 }
@@ -39,11 +40,15 @@
              
             /* Kleurpalette */
             --main-kleur: #df9ff9;
-            --form-achtergrond-kleur: #584360;
-            --achtergrond-kleur: rgb(232, 226, 235);
+            --form-achtergrond-kleur: #592a6b;
+            --achtergrond-kleur: #261e29;
         
             --button-kleur: #370152;
-            --tekst-kleur: #261e29;
+            --tekst-kleur: rgb(246, 246, 246);
+            --input-kleur: #ad84b877;
+            --label-kleur:rgb(246, 246, 246);
+            --radio-button-checked: #261e29;
+            --placeholder-kleur: #261e29;
     }
 }
 
@@ -62,7 +67,7 @@ li {
 
 body {
     background-color: var(--achtergrond-kleur);
-    background-color: #f1e9f4;
+    /* background-color: #f1e9f4; */
     font-family: var(--paragraaf);
     font-weight: 400;
     margin: 1em;
@@ -114,7 +119,7 @@ main {
 form {
     display: flex;
     flex-direction: column;
-    background-color: var(--achtergrond-kleur);
+    background-color: var(--form-achtergrond-kleur);
 
 }
 
@@ -135,9 +140,15 @@ form>fieldset {
     /* background-color: var(--achtergrond-kleur); */
 }
 
-/* inputs */
+/***************/
+/* FORM INPUTS */
+/***************/
 textarea {
     width: 100%;
+}
+
+label {
+    color: var(--label-kleur);
 }
 
 input {
@@ -157,9 +168,16 @@ input[type="radio"] {
 
 }
 
+input::placeholder {
+color: var(--placeholder-kleur);
+}
+
+
+
 input:checked+span {
     display: inline-block;
     background-color: var(--main-kleur);
+    color: var(--radio-button-checked);
 }
 
 /* Alle radio buttons */
@@ -189,10 +207,14 @@ form>fieldset>fieldset:nth-of-type(n+2) span {
 /* De vragen */
 form>fieldset fieldset p,
 form>fieldset>fieldset>label {
-    color: var(--font-size-paragraaf);
+    /* color: var(--font-size-paragraaf); */
     margin-bottom: 1em;
 }
 
+
+form  p {
+    color: var(--tekst-kleur);
+}
 /* body form  fieldset:nth-child(1) > fieldset :has(input[type="radio"]:checked)  {
  /* padding: 1em; */
 /* background-color: var(--main-kleur); 
@@ -269,13 +291,15 @@ button[type="submit"] {
     border: 1px solid var(--button-kleur);
     padding: 1em 1.5em;
     background-color: var(--button-kleur);
-    color: var(--form-achtergrond-kleur);
+    color: var(--tekst-kleur);
     font-family: var(--font-size-paragraaf);
+    
 
 }
 
 /* Vorige button */
 a.vorige-btn {
+
     display: inline-block;
     padding: 1em 1.5em;
     color: var(--tekst-kleur);
@@ -287,7 +311,7 @@ a.vorige-btn {
 /******************/
 /* RESPONSIVENESS */
 /******************/
-@media (min-width: 30em) {
+@media (min-width: 40em) {
     main {
         margin: 0 auto;
         width: 50%;
