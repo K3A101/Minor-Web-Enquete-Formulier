@@ -33,7 +33,7 @@
 
 
 /* Dark mode */
-@media 
+/* @media  */
 
 
 br {
@@ -140,6 +140,7 @@ input[type="text"] {
 input[type="radio"] {
     position: absolute;
     appearance: none;
+    left: -1000em;
 
 }
 
