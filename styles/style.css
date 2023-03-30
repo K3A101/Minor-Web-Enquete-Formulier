@@ -49,10 +49,11 @@ body {
     background-color: #f1e9f4;
     font-family: var(--paragraaf);
     font-weight: 400;
+    margin: 1em;
 
 }
 
-h2 {
+legend {
     font-family: var(--kopjes);
     font-weight: bold;
     font-size: clamp(1em, 2vw, 2em);
@@ -60,18 +61,23 @@ h2 {
     color: var(--button-kleur);
 }
 
+h2 {
+    color: var(--tekst-kleur);
+}
+
 /* Header */
 header nav ol {
     display: flex;
 
 }
+
 fieldset {
-  border: transparent;  
+    border: transparent;
 }
 
 /* Elke section  */
-form > fieldset fieldset:first-of-type {
-    
+form>fieldset fieldset:first-of-type {
+
     border-bottom: 3px solid var(--form-achtergrond-kleur);
     padding-bottom: 1em;
 }
@@ -92,8 +98,8 @@ main {
 form {
     display: flex;
     flex-direction: column;
-   
-   
+    background-color: var(--achtergrond-kleur);
+
 }
 
 /* @supports (display:grid) {
@@ -110,7 +116,7 @@ form>fieldset {
     gap: 3em;
     margin: 2em .5em;
     padding: 1em;
-    background-color: var(--achtergrond-kleur);
+    /* background-color: var(--achtergrond-kleur); */
 }
 
 /* inputs */
@@ -163,11 +169,12 @@ form>fieldset>fieldset:nth-of-type(n+2) span {
 
 
 /* De vragen */
-form > fieldset  fieldset p, 
-form > fieldset > fieldset> label{
-color: var(--font-size-paragraaf);
- margin-bottom: 1em;
+form>fieldset fieldset p,
+form>fieldset>fieldset>label {
+    color: var(--font-size-paragraaf);
+    margin-bottom: 1em;
 }
+
 /* body form  fieldset:nth-child(1) > fieldset :has(input[type="radio"]:checked)  {
  /* padding: 1em; */
 /* background-color: var(--main-kleur); 
@@ -225,11 +232,19 @@ input:required {
 /**********************/
 /* FORMULIER BUTTONS  */
 /**********************/
-form > ul {
+form>ul {
     display: flex;
     align-self: center;
 }
 
+@supports (position: sticky) {
+    form>ul {
+        position: sticky;
+        position: -webkit-sticky;
+        bottom: 0;
+
+    }
+}
 
 /* Volgende Button */
 button[type="submit"] {
@@ -246,7 +261,17 @@ a.vorige-btn {
     display: inline-block;
     padding: 1em 1.5em;
     color: var(--tekst-kleur);
-   border: 1px solid var(--button-kleur);
-    
+    border: 1px solid var(--button-kleur);
+    background-color: var(--form-achtergrond-kleur);
     text-decoration: none;
+}
+
+/******************/
+/* RESPONSIVENESS */
+/******************/
+@media (min-width: 30em) {
+    main {
+        margin: 0 auto;
+        width: 50%;
+    }
 }
