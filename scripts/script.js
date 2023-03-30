@@ -1,6 +1,6 @@
 console.log('hello')
 
-const formInputs = document.querySelectorAll('input[type="text"]', 'input[type="email"]');
+const formInputs = document.querySelectorAll('input[type="text"] , input[type="email"]');
 function saveFormInputsToLocal() {
     // Loop over each form input and save its value to local storage
     formInputs.forEach(input => {
@@ -28,3 +28,33 @@ formInputs.forEach(input => {
 
 // Call the function once on page load to save initial values
 loadFormInputToLocal();
+
+// Radio buttons
+
+let formRadios = document.querySelectorAll('input[type="radio"]');
+
+function saveFormRadiosToLocal() {
+    formRadios.forEach(input => {
+        let inputName = input.name;
+        let inputValue = input.value;
+        if (input.checked) {
+            localStorage.setItem(inputName, inputValue);
+        }
+    });
+}
+
+function loadFormRadiosFromLocal() {
+    formRadios.forEach(input => {
+        let inputName = input.name;
+        let storedValue = localStorage.getItem(inputName);
+        if (storedValue && input.value === storedValue) {
+            input.checked = true;
+        }
+    });
+}
+
+formRadios.forEach(input => {
+    input.addEventListener('change', saveFormRadiosToLocal);
+});
+
+loadFormRadiosFromLocal();
