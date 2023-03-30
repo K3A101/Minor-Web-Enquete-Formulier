@@ -14,7 +14,7 @@
     --font-size-kopje: 2em;
 
     /* Kleurpalette */
-    --legend-kleur:#370152;
+    --legend-kleur: #370152;
     --main-kleur: #df9ff9;
     --form-achtergrond-kleur: #f1e9f4;
     --achtergrond-kleur: white;
@@ -31,6 +31,7 @@
     --label-kleur: #261e29;
     --button-kleur-achtergrond: #370152;
     --button-kleur-tekst: #f6f6f6;
+    --link-kleur:#261e29;
 
 }
 
@@ -47,6 +48,7 @@
         --button-kleur-tekst: rgb(246, 246, 246);
         --button-kleur: #370152;
         --tekst-kleur: rgb(246, 246, 246);
+        --link-kleur: #261e29;
         --input-kleur: #ad84b877;
         --label-kleur: rgb(246, 246, 246);
         --radio-button-checked: #261e29;
@@ -54,6 +56,8 @@
         --button-kleur-achtergrond: #df9ff9;
         --button-kleur-tekst: #261e29;
         --legend-kleur: #df9ff9;
+        --niet-current-link: #df9ff991;
+        --current-link: #df9ff9;
     }
 }
 
@@ -86,14 +90,17 @@ legend {
     margin-bottom: 1em;
     color: var(--legend-kleur);
 }
+h1 {
+    text-align: center;
+    margin: 1em;
+}
 
 h2 {
     color: var(--tekst-kleur);
 }
 
-h1 {
-    text-align: center;
-    margin: 1em;
+h3 {
+    padding-bottom: 1em;
 }
 
 /* Header */
@@ -117,32 +124,46 @@ button {
     font-size: 1em;
     cursor: pointer;
 }
+
 /**********/
 /* HEADER */
 /**********/
-/* #show {
+ol {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+}
+
+ #show {
     position: absolute;
-   z-index: 1; 
+   z-index: 2; 
+   right: 1em;
+   top: 1em;
 }
 
 body :has(input[type="checkbox"]:checked)  nav {
     top: 0;
+    left: 0;
+
 }
 
 nav {
+    
     z-index: 0;
     position: absolute;
     top: -100em;
     width: 100%;
-    height: 5em;
-    background-color: #df9ff9;
+   
+    background-color: var(--main-kleur);
 }
 
-header nav ol {
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-} */
+header a {
+    color: var(--link-kleur);
+    padding: 1em;
+}
+
 
 /********/
 /* FORM */
@@ -355,5 +376,32 @@ a.vorige-btn {
         width: 50%;
     }
 
-  
+    header a {
+        text-decoration: none;
+        color: var(--link-kleur);
+        background-color: var(--niet-current-link);
+        /* padding: .2em; */
+    }
+
+    header a.current-page {
+        background-color: var(--current-link);
+    }
+
+    header nav ol {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1em;
+    }
+    #show {
+        display: none;
+    }
+
+    header nav {
+        position: static;
+        background-color: transparent;
+    }
+
+
+
 }
