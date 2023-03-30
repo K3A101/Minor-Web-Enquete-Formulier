@@ -33,7 +33,19 @@
 
 
 /* Dark mode */
-/* @media  */
+@media (prefers-color-scheme: dark ) {
+ 
+    :root {
+             
+            /* Kleurpalette */
+            --main-kleur: #df9ff9;
+            --form-achtergrond-kleur: #584360;
+            --achtergrond-kleur: rgb(232, 226, 235);
+        
+            --button-kleur: #370152;
+            --tekst-kleur: #261e29;
+    }
+}
 
 
 br {
