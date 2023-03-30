@@ -14,41 +14,46 @@
     --font-size-kopje: 2em;
 
     /* Kleurpalette */
+    --legend-kleur:#370152;
     --main-kleur: #df9ff9;
     --form-achtergrond-kleur: #f1e9f4;
     --achtergrond-kleur: white;
 
     --button-kleur: #370152;
     --tekst-kleur: #261e29;
-   /* --legend-kleur:  */
+    /* --legend-kleur:  */
 
     /* Form validatie */
     --valid-form-data-kleur: mediumseagreen;
     --invalid-form-data-kleur: lightsalmon;
-    --radio-button-checked:#261e29;
-    --input-kleur: rgb(246, 246, 246);
-    --label-kleur:#261e29;
-
+    --radio-button-checked: #261e29;
+    --input-kleur: #f6f6f6;
+    --label-kleur: #261e29;
+    --button-kleur-achtergrond: #370152;
+    --button-kleur-tekst: #f6f6f6;
 
 }
 
 
 /* Dark mode */
-@media (prefers-color-scheme: dark ) {
- 
+@media (prefers-color-scheme: dark) {
+
     :root {
-             
-            /* Kleurpalette */
-            --main-kleur: #df9ff9;
-            --form-achtergrond-kleur: #592a6b;
-            --achtergrond-kleur: #261e29;
-        
-            --button-kleur: #370152;
-            --tekst-kleur: rgb(246, 246, 246);
-            --input-kleur: #ad84b877;
-            --label-kleur:rgb(246, 246, 246);
-            --radio-button-checked: #261e29;
-            --placeholder-kleur: #261e29;
+
+        /* Kleurpalette */
+        --main-kleur: #df9ff9;
+        --form-achtergrond-kleur: #592a6b;
+        --achtergrond-kleur: #261e29;
+        --button-kleur-tekst: rgb(246, 246, 246);
+        --button-kleur: #370152;
+        --tekst-kleur: rgb(246, 246, 246);
+        --input-kleur: #ad84b877;
+        --label-kleur: rgb(246, 246, 246);
+        --radio-button-checked: #261e29;
+        --placeholder-kleur: #261e29;
+        --button-kleur-achtergrond: #df9ff9;
+        --button-kleur-tekst: #261e29;
+        --legend-kleur: #df9ff9;
     }
 }
 
@@ -79,11 +84,16 @@ legend {
     font-weight: bold;
     font-size: clamp(1em, 2vw, 2em);
     margin-bottom: 1em;
-    color: var(--button-kleur);
+    color: var(--legend-kleur);
 }
 
 h2 {
     color: var(--tekst-kleur);
+}
+
+h1 {
+    text-align: center;
+    margin: 1em;
 }
 
 /* Header */
@@ -105,7 +115,34 @@ form>fieldset fieldset:first-of-type {
 
 button {
     font-size: 1em;
+    cursor: pointer;
 }
+/**********/
+/* HEADER */
+/**********/
+/* #show {
+    position: absolute;
+   z-index: 1; 
+}
+
+body :has(input[type="checkbox"]:checked)  nav {
+    top: 0;
+}
+
+nav {
+    z-index: 0;
+    position: absolute;
+    top: -100em;
+    width: 100%;
+    height: 5em;
+    background-color: #df9ff9;
+}
+
+header nav ol {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+} */
 
 /********/
 /* FORM */
@@ -169,7 +206,7 @@ input[type="radio"] {
 }
 
 input::placeholder {
-color: var(--placeholder-kleur);
+    color: var(--placeholder-kleur);
 }
 
 
@@ -212,9 +249,10 @@ form>fieldset>fieldset>label {
 }
 
 
-form  p {
+form p {
     color: var(--tekst-kleur);
 }
+
 /* body form  fieldset:nth-child(1) > fieldset :has(input[type="radio"]:checked)  {
  /* padding: 1em; */
 /* background-color: var(--main-kleur); 
@@ -277,23 +315,23 @@ form>ul {
     align-self: center;
 }
 
-@supports (position: sticky) {
+/* @supports (position: sticky) {
     form>ul {
         position: sticky;
         position: -webkit-sticky;
         bottom: 0;
 
     }
-}
+} */
 
 /* Volgende Button */
 button[type="submit"] {
     border: 1px solid var(--button-kleur);
     padding: 1em 1.5em;
-    background-color: var(--button-kleur);
-    color: var(--tekst-kleur);
+    background-color: var(--button-kleur-achtergrond);
+    color: var(--button-kleur-tekst);
     font-family: var(--font-size-paragraaf);
-    
+
 
 }
 
@@ -316,4 +354,6 @@ a.vorige-btn {
         margin: 0 auto;
         width: 50%;
     }
+
+  
 }
