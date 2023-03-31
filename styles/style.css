@@ -34,7 +34,7 @@
     --link-kleur: #261e29;
     --current-link: #f1e9f4;
     --niet-current-link: #f1e9f488;
-    --button-andere-state-achtergrond:#df9ff9 ;
+    --button-andere-state-achtergrond: #df9ff9;
     --button-andere-state-tekst: #370152;
 }
 
@@ -226,7 +226,7 @@ form {
     display: flex;
     flex-direction: column;
     background-color: var(--form-achtergrond-kleur);
-    
+
 
 }
 
@@ -248,6 +248,7 @@ textarea {
     border: none;
     background-color: var(--input-kleur);
     padding: 1em;
+    font-family: var(--paragraaf);
 }
 
 
@@ -474,6 +475,11 @@ input:required {
 
 }
 
+.valid-data {
+    border: 1px solid var(--valid-form-data-kleur);
+    border-bottom: 4px solid var(--valid-form-data-kleur);
+}
+
 /**********************/
 /* FORMULIER BUTTONS  */
 /**********************/
@@ -496,7 +502,7 @@ button[type="submit"] {
 
 button:hover,
 button:focus {
-    border:2px solid var(--button-andere-state-achtergrond);
+    border: 2px solid var(--button-andere-state-achtergrond);
     background-color: var(--button-andere-state-achtergrond);
     color: var(--button-andere-state-tekst);
 }
@@ -522,6 +528,7 @@ a.vorige-btn:focus {
 /* RESPONSIVENESS */
 /******************/
 @media (min-width: 40em) {
+
     /* form {
         max-width: 50em;
     } */
