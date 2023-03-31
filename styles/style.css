@@ -31,13 +31,15 @@
     --label-kleur: #261e29;
     --button-kleur-achtergrond: #370152;
     --button-kleur-tekst: #f6f6f6;
-    --link-kleur:#261e29;
+    --link-kleur: #261e29;
+    --current-link: #f1e9f4;
+    --niet-current-link: #f1e9f488;
 
 }
 
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark)  {
 
     :root {
 
@@ -56,10 +58,22 @@
         --button-kleur-achtergrond: #df9ff9;
         --button-kleur-tekst: #261e29;
         --legend-kleur: #df9ff9;
-        --niet-current-link: #df9ff991;
-        --current-link: #df9ff9;
+        /* --niet-current-link: #df9ff991;
+        --current-link: #df9ff9; */
+        --current-link: #f1e9f4;
+        --niet-current-link: #f1e9f488;
         --valid-form-data-kleur: rgb(106, 225, 160);
     }
+}
+
+/* Voor dark mode en voor desktop */
+@media(prefers-color-scheme: dark ) and (min-width: 40em) {
+    :root {
+       --niet-current-link: #df9ff991;
+        --current-link: #df9ff9; 
+    }
+
+
 }
 
 
@@ -92,6 +106,7 @@ legend {
     margin-bottom: 1em;
     color: var(--legend-kleur);
 }
+
 h1 {
     text-align: center;
     margin: 1em;
@@ -130,6 +145,18 @@ button {
 /**********/
 /* HEADER */
 /**********/
+header a {
+    text-decoration: none;
+    color: var(--link-kleur);
+    background-color: var(--niet-current-link);
+    padding: .2em;
+}
+
+
+header a.current-page {
+    background-color: var(--current-link);
+}
+
 ol {
     width: 100%;
     display: flex;
@@ -138,35 +165,49 @@ ol {
     padding: 1em;
 }
 
- #show {
+#show {
+    appearance: none;
+    opacity: 0;
     position: absolute;
-   z-index: 2; 
-   right: 1em;
-   top: 1em;
+    z-index: 2;
+    right: 1em;
+    top: 1em;
 }
 
-body :has(input[type="checkbox"]:checked)  nav {
+#menu {
+    background-color: var(--achtergrond-kleur);
+    color: var(--label-kleur);
+    position: absolute;
+    padding: .5em;
+    z-index: 2;
+    right: 1em;
+    top: 1em;
+}
+
+
+body :has(input[type="checkbox"]:checked) nav {
     top: 0;
     left: 0;
 
 }
 
+body input[type="checkbox"]:checked~nav {
+    top: 0;
+    left: 0;
+}
 
 
 nav {
-    
+
     z-index: 1;
     position: absolute;
     top: -100em;
     width: 100%;
-   
+
     background-color: var(--main-kleur);
 }
 
-header a {
-    color: var(--link-kleur);
-    padding: 1em;
-}
+
 
 
 /********/
@@ -264,9 +305,9 @@ input:checked+span {
 }
 
 /* Vraag 1 en 2 */
-form > fieldset > fieldset:nth-of-type(1) label {
+form>fieldset>fieldset:nth-of-type(1) label {
     display: inline-block;
-    
+
 }
 
 form>fieldset>fieldset:nth-of-type(1) select {
@@ -354,18 +395,19 @@ input[type="email"] {
 
 
 /* Formulier Validatie */
-input[type="text"]:valid, input[type="email"]:valid {
+input[type="text"]:valid,
+input[type="email"]:valid {
     border: 1px solid var(--valid-form-data-kleur);
     border-bottom: 4px solid var(--valid-form-data-kleur);
 }
 
 
-input[type="email"]:invalid, input[inputmode="numeric"]:inva {
+input[type="email"]:invalid,
+input[inputmode="numeric"]:invalid {
     border: 1px solid var(--invalid-form-data-kleur);
     border-bottom: 4px solid var(--invalid-form-data-kleur);
 
 }
-
 
 
 input:required {
@@ -374,7 +416,7 @@ input:required {
 
 /* Foutmeldingen */
 
- #studentgegevens label:has(input[type="text"]:valid)::after {
+#studentgegevens label:has(input[type="text"]:valid)::after {
     content: 'Lekker bezig';
     color: var(--valid-form-data-kleur);
     position: absolute;
@@ -384,11 +426,36 @@ input:required {
 }
 
 
-body #studentgegevens label:has(input[type="text"]:invalid)::after {
+
+
+/* body #studentgegevens label:has(input[type="text"]:invalid)::after {
     content: 'Vul je gegevens om door te gaan.';
     position: absolute;
-    /* bottom: -1em; */
+    bottom: -1em;
     transform: translateY(4em);
+    transform: translateY(.5em);
+        font-size: 14px;
+} */
+
+
+/* Form validatie voor firefox */
+/* Foutmeldingen */
+
+#studentgegevens label input[type="text"]:valid+span::after {
+    content: '\2713';
+    color: var(--valid-form-data-kleur);
+    position: absolute;
+    font-weight: bold;
+    transform: translateY(-2.3em);
+    right: 3em;
+}
+
+#studentgegevens label input[type="text"]:invalid+span::after {
+    content: 'Hoeft niet perse je echte gegevens in te vullen.';
+    position: absolute;
+    transform: translateY(.5em);
+    font-size: 14px;
+
 }
 
 /**********************/
@@ -444,6 +511,7 @@ a.vorige-btn {
         color: var(--link-kleur);
         background-color: var(--niet-current-link);
         /* padding: .2em; */
+        padding: 1em;
     }
 
     header a.current-page {
@@ -456,7 +524,12 @@ a.vorige-btn {
         justify-content: center;
         gap: 1em;
     }
+
     #show {
+        display: none;
+    }
+
+    #menu {
         display: none;
     }
 
