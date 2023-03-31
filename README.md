@@ -254,17 +254,26 @@ loadFormInputToLocal();
 Hier selecteer ik alle iputs vanuit de html, per input pakt ik de value en de name atribuut en zetten ze in de localstorage. Daarna haal ik alle waarde vanuit de localstorage met de `.getItem() `methode.
 
 
+## Wat zou gebeuren met het data als javascript uit staat?
+Wanneer javascript uitstaat, kunnen we geen localstorage gebruiker want het is WEB API. Dus wat we kunnen is een server-side database. Dus Als de gebruiker het formulier invult, wordt de data opgeslagen in de database/server...
 
+### Hoe zou dat werken?
 
 Briefing van de server side 
 - Kijken wat niet wekren op 
 - Wat moet de server doen
 - Voorbeeldpagina maken
 
-
-
 ---
 
+## 4. Duidelijk aangeven waar je naar de vorige vragen kan gaan of vraag kan skippen
+In mijn prototype is het mogelijk om naar de vorige of volgende vak te gaan. Er zijn twee manieren. Je kan onderaan bij de vorige en volgende knop naar een andere vak of onderdeel gaan. Ten tweede heb ik menu bar gemaakt waar je een lijst met links krijgt waar je een vak kan kiezen.
+En dus je kan ze ook overslaan als je niet wil invullen.
+
+![Navigatie](./images/progressbar.png)
+![Knoppen](./images/volgende-button.png)
+
+Ik heb een class toegevoegd waar je de 
 
 
 ## Progressive enhancement
