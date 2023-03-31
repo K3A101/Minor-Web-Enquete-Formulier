@@ -226,6 +226,7 @@ form {
     display: flex;
     flex-direction: column;
     background-color: var(--form-achtergrond-kleur);
+    
 
 }
 
@@ -413,7 +414,7 @@ input:required {
     border: 1px dashed var(--invalid-form-data-kleur);
 }
 
-/* Foutmeldingen */
+/* Foutmeldingen voor de rest van de browser*/
 
 #studentgegevens label:has(input[type="text"]:valid)::after {
     content: 'Lekker bezig';
@@ -430,7 +431,7 @@ input:required {
     color: var(--valid-form-data-kleur);
     position: absolute;
     font-weight: bold;
-    transform: translateY(5em);
+    transform: translateY(2em);
     right: 5em;
 }
 
@@ -455,6 +456,7 @@ input:required {
 
 }
 
+/* Voor de email */
 #studentgegevens label input[type="email"]:valid+span::after {
     content: '\2713';
     color: var(--valid-form-data-kleur);
@@ -464,6 +466,13 @@ input:required {
     right: 3em;
 }
 
+#studentgegevens label input[type="email"]:invalid+span::after {
+    content: 'Voer maar wat in. ';
+    position: absolute;
+    transform: translateY(.5em);
+    font-size: 14px;
+
+}
 
 /**********************/
 /* FORMULIER BUTTONS  */
@@ -513,6 +522,9 @@ a.vorige-btn:focus {
 /* RESPONSIVENESS */
 /******************/
 @media (min-width: 40em) {
+    /* form {
+        max-width: 50em;
+    } */
     main {
         margin: 0 auto;
         width: 50%;
