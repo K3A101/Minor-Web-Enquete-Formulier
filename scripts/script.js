@@ -12,22 +12,33 @@ textAreaValidation()
 
 function textAreaValidation() {
     const textAreaInputs = document.querySelectorAll('textarea');
-    
+
+
     textAreaInputs.forEach(area => {
-        area.addEventListener('input', () =>{
-            let textAreaValues = area.value;  
+        area.addEventListener('input', () => {
+            let textAreaValues = area.value;
+            let span = document.createElement('span');
+            area.parentNode.insertBefore(span, area.nextSibling);
 
             if (textAreaValues !== '') {
-                area.classList.add('valid-data')
+                if (!area.dataset.typed) {
+                    span.textContent = 'Wat een goeie mening zeg!';
+                    
+                }
+                area.dataset.typed = 'true';
+                area.classList.add('valid-data');
+
             } else {
+                span.textContent = ''
+                area.dataset.typed = '';
                 area.classList.remove('valid-data')
             }
-        } )
-     
-    //    let textAreaNames = area.name;
-      
+        })
 
-       
+        //    let textAreaNames = area.name;
+
+
+
     })
 }
 
@@ -43,13 +54,13 @@ function textAreaFormInputToLocal() {
         let setTextAreaValue = textArea.value;
         let setTextAreaName = textArea.name;
 
-    localStorage.setItem(setTextAreaName, setTextAreaValue)
+        localStorage.setItem(setTextAreaName, setTextAreaValue)
     })
 
-    
+
 }
 
-function loadTextareaFormInputFromLocal(){
+function loadTextareaFormInputFromLocal() {
     textAreas.forEach(textArea => {
         let getTextAreaValue = textArea.value;
         let getTextAreaName = textArea.name;
@@ -58,7 +69,7 @@ function loadTextareaFormInputFromLocal(){
     })
 }
 
-textAreas.forEach(input =>{
+textAreas.forEach(input => {
     input.addEventListener('input', textAreaFormInputToLocal)
 })
 
@@ -71,7 +82,7 @@ function saveFormInputsToLocal() {
         let inputName = input.name; // Get the name of the input element
         let inputValue = input.value; // Get the current value of the input element
         localStorage.setItem(inputName, inputValue); // Save the input value in local storage
-       
+
     });
 }
 
@@ -79,7 +90,7 @@ function loadFormInputToLocal() {
     formInputs.forEach(input => {
         const inputName = input.name;
         let storedValue = localStorage.getItem(inputName);
-        if(storedValue){
+        if (storedValue) {
             input.value = storedValue
         }
     });
