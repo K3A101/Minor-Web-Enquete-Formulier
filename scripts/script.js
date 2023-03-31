@@ -2,6 +2,7 @@ console.log('hello')
 //Variabele
 const textAreas = document.querySelectorAll('textarea');
 
+
 const formInputs = document.querySelectorAll('input[type="text"] , input[type="email"]');
 let formRadios = document.querySelectorAll('input[type="radio"]');
 

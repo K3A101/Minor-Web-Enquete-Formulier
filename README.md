@@ -23,7 +23,8 @@ De vragen:
 
 ---
 ## Functionaliteiten van het Prototype
-De enquete moet op bepaalde voorwaarde doen en die voorwaarden moet alle browser werken, op verschillende scherm grootte en ook als bepaalde features uit is zoals cookies en Javascript. Onderaan staan de core functionaliteiten die  op elke moment zo goed moeten werken. 
+De enquete moet op bepaalde voorwaarde doen en die voorwaarden moeten  zo geod mogelijke werken op alle browser , op verschillende scherm grootte en ook wanneer    
+ bepaalde features uit is zoals cookies en Javascript. Onderaan staan de core functionaliteiten die  op elke moment zo goed moeten werken. 
 
 ### Core functionaliteiten voor de enquête - Zelf bedacht
 - foutmelding, wat is er fout ingevuld wanneer je op de submit klit
@@ -273,7 +274,119 @@ En dus je kan ze ook overslaan als je niet wil invullen.
 ![Navigatie](./images/progressbar.png)
 ![Knoppen](./images/volgende-button.png)
 
-Ik heb een class toegevoegd waar je de 
+Ik heb een class toegevoegd waar je een andere opmaak kan geven terwijl je op de volgende pagina bent.  Dit was makkelijk omdat ik de enquête had verdeeld in verschillende pagina's. En aan elkaar gekoppeld met links. Deze manier geef ook aan waar je bent in het formulier. 
+
+
+---
+
+## 5. Geen zichtbare radio buttons
+![radio Buttons](./images/form-per-vak.png)
+In het enquête moet je per vak de lesstof,uitleg en eigen inzicht beoordelen van een schaal van 1 tot 10. Bij semantische HTML, moet je radio Buttons gebruiken. Maar Als je css toevoegd moet de standaard vorm van radio buttons weg. 
+
+![radiobuttons in html](./images/radio-html.png)
+Zonder css zijn alle radio buttons onder elkaar in een lijst gegroepeert  met daarbij de cijfers. Met css heb ik de radio buttons onzichtbaar gemaakt met `appearance: none;` en `opacity: 0;`. Verder heb ik de lijst bullet points weggehaald en `display: flex;` om de radio buttons naast elkaar te plaatsen. 
+
+```css
+input[type="radio"] {
+    position: absolute;
+    appearance: none;
+    opacity: 0;
+    /* left: -1000em; */
+
+}
+
+``` 
+
+---
+
+## 6. Het formulier moet dark mode en light mode hebben
+De laatste criteria voor de formulier is dat het formulier moet een dark en licht versie bevatten. Hier is ook sprake van progressive enhancement. In de html heb je de mogelijkheid om de modus te zetten in de meta tag. De `<meta name="color-scheme" content="light dark">` plaats je bovenaan in de head element. Dan genereer de browser de standard versie van dark mode voor je. Hieronder zie je een voorbeeld.
+
+
+### In HTML 
+![lightmode](./images/html-light.png)
+![darkmode](./images/html-dark.png)
+
+
+Om de default mooier te maken heb ik de @media features van css gebruikt. Voor de Cs heb ik  verschllende custom properties voor de kleurpalete gemaakt in mijn `:root`. De custom propertie zijn handig want dan moet ik een keer de kleur of waarde aanpassen en die wordt overal aangepast. Innmijn root heb ik mijn standaard kleurpalette gemaakt voor de lightmode. Voor de dark mode heb ik media queries `prefers-color-scheme: dark` gebruikt. Dezelfde custom properties in mijn normale root heb ik in de media queries geplaats, maar alleen de kleurcodes heb ik verandert. Dus een soort een tegenovergestelde kleurpalette. 
+
+```css
+
+:root {
+    /* Lettertype */
+    --paragraaf: 'interstate', 'Arial', 'Helvetica', sans-serif;
+    --kopjes: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
+    --font-size-paragraaf: 1em;
+    --font-size-kopje: 2em;
+
+    /* Kleurpalette */
+    --legend-kleur: #370152;
+    --main-kleur: #df9ff9;
+    --form-achtergrond-kleur: #f1e9f4;
+    --achtergrond-kleur: white;
+
+    --button-kleur: #370152;
+    --tekst-kleur: #261e29;
+    /* --legend-kleur:  */
+
+    /* Form validatie */
+    --valid-form-data-kleur: mediumseagreen;
+    --invalid-form-data-kleur: lightsalmon;
+    --radio-button-checked: #261e29;
+    --input-kleur: #f6f6f6;
+    --label-kleur: #261e29;
+    --button-kleur-achtergrond: #370152;
+    --button-kleur-tekst: #f6f6f6;
+    --link-kleur: #261e29;
+    --current-link: #f1e9f4;
+    --niet-current-link: #f1e9f488;
+    --button-andere-state-achtergrond: #df9ff9;
+    --button-andere-state-tekst: #370152;
+}
+
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+
+    :root {
+
+        /* Kleurpalette */
+        --main-kleur: #df9ff9;
+        --form-achtergrond-kleur: #592a6b;
+        --achtergrond-kleur: #261e29;
+        --button-kleur-tekst: #f6f6f6;
+        --button-kleur: #370152;
+        --tekst-kleur: rgb(246, 246, 246);
+        --link-kleur: #261e29;
+        --input-kleur: #ad84b877;
+        --label-kleur: rgb(246, 246, 246);
+        --radio-button-checked: #261e29;
+        --placeholder-kleur: #261e29;
+        --button-kleur-achtergrond: #df9ff9;
+        --button-kleur-tekst: #261e29;
+        --legend-kleur: #df9ff9;
+        /* --niet-current-link: #df9ff991;
+        --current-link: #df9ff9; */
+        --current-link: #f1e9f4;
+        --niet-current-link: #f1e9f488;
+        --valid-form-data-kleur: rgb(106, 225, 160);
+        --button-andere-state-achtergrond: #370152;
+        --button-andere-state-tekst: #f6f6f6;
+    }
+}
+
+/* Voor dark mode en voor desktop */
+@media(prefers-color-scheme: dark) and (min-width: 40em) {
+    :root {
+        --niet-current-link: #df9ff991;
+        --current-link: #df9ff9;
+    }
+
+}
+
+```
+
+### In CSS
 
 
 ## Progressive enhancement
@@ -297,7 +410,11 @@ Ik heb een class toegevoegd waar je de
 
 ### Cookies uitzetten
 
+### Kleurcontrast
 
+### Screenreader 
+
+---
 ## Browsers
 
 ## Chrome
