@@ -34,12 +34,13 @@
     --link-kleur: #261e29;
     --current-link: #f1e9f4;
     --niet-current-link: #f1e9f488;
-
+    --button-andere-state-achtergrond:#df9ff9 ;
+    --button-andere-state-tekst: #370152;
 }
 
 
 /* Dark mode */
-@media (prefers-color-scheme: dark)  {
+@media (prefers-color-scheme: dark) {
 
     :root {
 
@@ -47,7 +48,7 @@
         --main-kleur: #df9ff9;
         --form-achtergrond-kleur: #592a6b;
         --achtergrond-kleur: #261e29;
-        --button-kleur-tekst: rgb(246, 246, 246);
+        --button-kleur-tekst: #f6f6f6;
         --button-kleur: #370152;
         --tekst-kleur: rgb(246, 246, 246);
         --link-kleur: #261e29;
@@ -63,14 +64,16 @@
         --current-link: #f1e9f4;
         --niet-current-link: #f1e9f488;
         --valid-form-data-kleur: rgb(106, 225, 160);
+        --button-andere-state-achtergrond: #370152;
+        --button-andere-state-tekst: #f6f6f6;
     }
 }
 
 /* Voor dark mode en voor desktop */
-@media(prefers-color-scheme: dark ) and (min-width: 40em) {
+@media(prefers-color-scheme: dark) and (min-width: 40em) {
     :root {
-       --niet-current-link: #df9ff991;
-        --current-link: #df9ff9; 
+        --niet-current-link: #df9ff991;
+        --current-link: #df9ff9;
     }
 
 
@@ -226,13 +229,6 @@ form {
 
 }
 
-/* @supports (display:grid) {
-    form {
-            display: grid;
-            place-items: center;
-            width: 100%;
-        }
-} */
 
 form>fieldset {
     display: flex;
@@ -310,9 +306,12 @@ form>fieldset>fieldset:nth-of-type(1) label {
 
 }
 
-form>fieldset>fieldset:nth-of-type(1) select {
+form>fieldset>fieldset:nth-of-type(1) input {
     /* display: block; */
-    margin-left: .5em;
+    text-align: center;
+    width: 5em;
+    margin-left: .8em;
+    margin-bottom: 1em;
 }
 
 
@@ -351,12 +350,6 @@ form>fieldset>fieldset>label {
 form p {
     color: var(--tekst-kleur);
 }
-
-/* body form  fieldset:nth-child(1) > fieldset :has(input[type="radio"]:checked)  {
- /* padding: 1em; */
-/* background-color: var(--main-kleur); 
-}*/
-
 
 /*******************/
 /* STUDENTGEGEVENS */
@@ -401,6 +394,12 @@ input[type="email"]:valid {
     border-bottom: 4px solid var(--valid-form-data-kleur);
 }
 
+/* input[type="text"]:valid,
+input[type="email"]:valid,
+textarea:valid {
+    border: 1px solid var(--valid-form-data-kleur);
+    border-bottom: 4px solid var(--valid-form-data-kleur);
+} */
 
 input[type="email"]:invalid,
 input[inputmode="numeric"]:invalid {
@@ -426,16 +425,14 @@ input:required {
 }
 
 
-
-
-/* body #studentgegevens label:has(input[type="text"]:invalid)::after {
-    content: 'Vul je gegevens om door te gaan.';
+#studentgegevens label:has(input[type="email"]:valid)::after {
+    content: 'Lekker bezig';
+    color: var(--valid-form-data-kleur);
     position: absolute;
-    bottom: -1em;
-    transform: translateY(4em);
-    transform: translateY(.5em);
-        font-size: 14px;
-} */
+    font-weight: bold;
+    transform: translateY(5em);
+    right: 5em;
+}
 
 
 /* Form validatie voor firefox */
@@ -451,12 +448,22 @@ input:required {
 }
 
 #studentgegevens label input[type="text"]:invalid+span::after {
-    content: 'Hoeft niet perse je echte gegevens in te vullen.';
+    content: 'Voer maar wat in. ';
     position: absolute;
     transform: translateY(.5em);
     font-size: 14px;
 
 }
+
+#studentgegevens label input[type="email"]:valid+span::after {
+    content: '\2713';
+    color: var(--valid-form-data-kleur);
+    position: absolute;
+    font-weight: bold;
+    transform: translateY(-2.3em);
+    right: 3em;
+}
+
 
 /**********************/
 /* FORMULIER BUTTONS  */
@@ -466,18 +473,10 @@ form>ul {
     align-self: center;
 }
 
-/* @supports (position: sticky) {
-    form>ul {
-        position: sticky;
-        position: -webkit-sticky;
-        bottom: 0;
-
-    }
-} */
 
 /* Volgende Button */
 button[type="submit"] {
-    border: 1px solid var(--button-kleur);
+    border: 2px solid var(--button-kleur-achtergrond);
     padding: 1em 1.5em;
     background-color: var(--button-kleur-achtergrond);
     color: var(--button-kleur-tekst);
@@ -486,15 +485,28 @@ button[type="submit"] {
 
 }
 
+button:hover,
+button:focus {
+    border:2px solid var(--button-andere-state-achtergrond);
+    background-color: var(--button-andere-state-achtergrond);
+    color: var(--button-andere-state-tekst);
+}
+
 /* Vorige button */
 a.vorige-btn {
 
     display: inline-block;
     padding: 1em 1.5em;
     color: var(--tekst-kleur);
-    border: 1px solid var(--button-kleur);
+    border: 2px solid var(--button-kleur-achtergrond);
     background-color: var(--form-achtergrond-kleur);
     text-decoration: none;
+}
+
+a.vorige-btn:hover,
+a.vorige-btn:focus {
+    border: 2px solid var(--button-andere-state-achtergrond);
+    color: var(--button-andere-state-tekst);
 }
 
 /******************/
