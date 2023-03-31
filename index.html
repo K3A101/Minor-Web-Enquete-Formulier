@@ -19,7 +19,9 @@
 </head>
 
 <body>
-    <header>
+    <header> 
+        <label id="menu"for="show">Menu</label>
+        <input type="checkbox" name="showMenu" id="show">
         <nav>
             <ol>
                 <li><a class="current-page" href="./index.html">Home</a></li>
@@ -32,8 +34,9 @@
                 <li><a href="./html/meesterproef.html">Vak 7</a></li>
                 <li><a href="./html/weekly-nerd.html">Vak 8</a></li>
             </ol>
+
         </nav>
-        <input type="checkbox" name="showMenu" id="show">
+       
 
     </header>
     <main>
@@ -49,16 +52,19 @@
                 <label for="voornaam">Voornaam*
                     <input type="text" name="voornaam" id="voornaam" aria-required="true" required
                         placeholder="Vul jouw voornaam in" aria-placeholder="Vul jouw voornaam in">
+                        <span></span>
                 </label><br>
 
                 <label for="achternaam">Achternaam*
                     <input type="text" name="achternaam" id="achternaam" aria-required="true" required
                         placeholder="Vul jouw achternaam  in" aria-placeholder="Vul jouw achternaam in">
+                        <span></span>
                 </label><br>
 
                 <label for="studentennummer">Studentennummer*
-                    <input type="text" inputmode="numeric" name="studentennummer" required id="studentennummer" placeholder="Bestaat uit 9 cijfers"
-                        aria-placeholder="Bestaat uit 9 cijfers" minlength="1" maxlength="9"  pattern="[5-6][0-9]{8}">
+                    <input type="text" inputmode="numeric" name="studentennummer" required id="studentennummer" placeholder="Je nummer begint met 5.."
+                        aria-placeholder="Studentennummer begint met 5" minlength="1" maxlength="9"  pattern="[5-6][0-9]{8}">
+                        <span></span>
                 </label><br>
 
 
