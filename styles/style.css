@@ -480,6 +480,13 @@ input:required {
     border-bottom: 4px solid var(--valid-form-data-kleur);
 }
 
+textarea.valid-data::after {
+    content: 'Wat een goeie mening zeg!';
+    position: absolute;
+    color: var(--tekst-kleur);
+    transform: translateY(2em);
+
+}
 /**********************/
 /* FORMULIER BUTTONS  */
 /**********************/
