@@ -323,7 +323,10 @@ form>fieldset>fieldset:nth-of-type(1) input {
     margin-left: .8em;
     margin-bottom: 1em;
 }
-
+/* Vraag 3, 4,5 */
+form>fieldset>fieldset p:focus {
+    outline: 2px dashed var(--main-kleur);
+}
 
 /* Alle radio buttons */
 form>fieldset>fieldset:nth-of-type(n+2) ul {
@@ -546,6 +549,26 @@ a.vorige-btn:focus {
     color: var(--button-andere-state-tekst);
 }
 
+/*********************/
+/* BEVESTIGINGPAGINA */
+/*********************/
+#bevestiging  {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+#bevestiging h1 {
+    padding: 1em;
+    margin: 0;
+}
+#bevestiging main {
+    background-color: var(--form-achtergrond-kleur);
+    padding: 1em;
+}
+#bevestiging p {
+    text-align: center;
+}
 /******************/
 /* RESPONSIVENESS */
 /******************/
