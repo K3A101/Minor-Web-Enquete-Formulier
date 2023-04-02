@@ -627,12 +627,22 @@ textarea:focus {
 ## Browsers
 
 ## Chrome
+![op chrome](images/form-per-vak.png)
+
+---
 
 ## Safari
+![safari mobiel](images/safari-mobiel-2.jpg)
+![safari mobiel](images/safari-mobiel-3.jpg)
 
 ## Firefox
+![firefox](/images/firefox.png)
+![firefox](/images/valid-firefox.png)
+
 
 ## Samsung Internet
+![samsung internet](/images/samsung-internet.jpg)
+![samsung internet feedback](/images/samsung-internet-feedback.jpg)
 
 ## PrinceXM
 
