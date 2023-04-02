@@ -157,7 +157,8 @@ header a {
     /* transition: border-width ease 1s; */
 }
 
-header a:hover, header a:focus-within{
+header a:hover,
+header a:focus-within {
     outline: 0;
     border: 2px dashed var(--button-andere-state-tekst);
 }
@@ -250,6 +251,14 @@ form>fieldset {
 /***************/
 /* FORM INPUTS */
 /***************/
+label {
+    color: var(--label-kleur);
+}
+
+input {
+    background-color: var(--input-kleur);
+}
+
 textarea {
     width: 100%;
     border: none;
@@ -275,14 +284,6 @@ textarea:focus {
 
 }
 
-
-label {
-    color: var(--label-kleur);
-}
-
-input {
-    background-color: var(--input-kleur);
-}
 
 input[type="text"] {
     padding: 1em;
@@ -494,6 +495,7 @@ textarea.valid-data::after {
     transform: translateY(2em);
 
 }
+
 /**********************/
 /* FORMULIER BUTTONS  */
 /**********************/
@@ -516,6 +518,9 @@ button[type="submit"] {
 
 button:hover,
 button:focus {
+    outline-style: dashed;
+    outline-width: 3px;
+    outline-color: var(--main-kleur);
     border: 2px solid var(--button-andere-state-achtergrond);
     background-color: var(--button-andere-state-achtergrond);
     color: var(--button-andere-state-tekst);
@@ -534,6 +539,9 @@ a.vorige-btn {
 
 a.vorige-btn:hover,
 a.vorige-btn:focus {
+    outline-style: dashed;
+    outline-width: 3px;
+    outline-color: var(--main-kleur);
     border: 2px solid var(--button-andere-state-achtergrond);
     color: var(--button-andere-state-tekst);
 }
