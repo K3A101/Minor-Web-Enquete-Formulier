@@ -465,7 +465,7 @@ Om de default mooier te maken heb ik de @media features van css gebruikt. Voor d
 ```
 
 ### In CSS
-![css](./images/css-lightmode.png)
+![css](/images/lightmode.png)
 
 
 ## Progressive enhancement
@@ -514,15 +514,112 @@ Wat is **niet** mogelijk als javascript uitstaat:
 - Mijn textarea geeft geen feedback als de gebruiker iets intoets. 
 
 
+### Een oplossing 
+Voor de formulier validatie maak ik geen zorgen want de browser zelf heeft een fallback en je krijg feedback terug als je het formulier niet goed had inegevuld. Om de fallback beter te maken kan ik met css de `:invalid`, `:valid`, `:has()` sibling selector(`~` `+`) en `::after` selectoren gebruiken. 
+
+---
 ### Slechte internet verbinding
+Een andere scenario die ik heb over nagedacht is een gebruiker die het formulier wil invullen en maar in de trein zit bijvoorbeeld en heel trage internetverbinding heeft. Wat dan? Om dit te testen heb ik in mijn netwerk tab in de developer tool, het netwerk op slow 3g geplaatst. Wat opvallend is dat het duurt langer om naar de volgende pagina te gaan. In firefox als ik de netwerk op het laagste optie zet, dus de gprs dan duurt het langer om het css te laden.  Dus misschien krijgt de gebruiker dan eerst een puur html pagina zonder opmaak te zien. Maar ze kunnen het formulier invullen.
 
-### Geen Custom fonts
 
-### Cookies uitzetten
+### Een Oplossing
+En mogelijke oplossing voor dit probleem zou zijn is het formulier progressive web app maken. Met daarbij een service worker en manifest.json bestand. En alsnog de data kun invullen en in de browser cachen. Maar dit is meestal iets dat je niet kan controleren.
+
+---
+### Custom fonts uitzetten
+Om mijn interface wat mooier te maken heb ik custom fonts geimplementeerd. Er zijn verschillende manieren om dat de doen. Je kan`@font-face` gebruiken in de css en vanuit je lokale bestand installeren. Of fonts service gebruiken en die koppelen in de head van je html pagina met de `<link>` tag. Ik heb de tweede optie gebruikt.
+
+```html
+<head>
+    <!-- In de html -->
+ <!-- Fonts -->
+    <!-- Opens Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Interstate -->
+    <link rel="stylesheet" href="https://use.typekit.net/pxn6jyw.css">
+    <meta name="color-scheme" content="light dark">
+</head>
+```
+
+De twee font services die ik heb gebruikt zijn google fonts en adobe fonts. Ik koppel ze met de link tag in mijn html. Daarna met het CSS  `font-size` property, plaatst ik de lettertype op mijn webpagina. 
+
+```css
+/* In de css */
+body {
+    background-color: var(--achtergrond-kleur);
+    font-family:'interstate', 'Arial', 'Helvetica', sans-serif;
+    font-weight: 400;
+    margin: 1em;
+
+}
+
+```
+Ik heb achter de custom-fonts, verschillende fallback font toegevoegd, in geval dat de browser een van hun ondersteund pakt die gewoon de volgende.
+
+     font-family:'interstate', 'Arial', 'Helvetica', sans-serif;
+
+---
 
 ### Kleur
+Niet iedereen kan kleur zien zoals iedereen. Dit fenomeen heet kleurenblindheid. Wanneer je een website ontwerp moet je rekening houden met mensen die kleurenblind zijn.
 
-### Muis/Trackpad
+Ik moet rekening houden met:
+1. Niet volledig afhanelijk zijn met kleur. In het normale situatie als je iets verkeerd in het formulier invult, dan zie je een rode rand. Maar voor mensen die niet rood kunnen zien, weten niet dat ze iets fout had  ingevuld. Dus het beste praktijk om een foutmelding an te geven met duidleijk oplossing. 
+2. Genoeg contrast hebben tussen de componenten.
+
+### Hoe kan ik de kleurcontrast testen?
+Er zijn verschillende manieren om kleurcontrast te testen. 
+Wat ik heb gebruikt zijn:
+- Color filters in mijn windows instellingen
+- Color contrast analyzer (cca)
+
+Volgens de WCAG (Web Content accessibilty guidelines) moet de kleurcontrasten tenminste een contrast ratio hebben van 4.5:1. 
+Ik heb zelf bepaalde test gedaan op mijn webpaginas met de Color contrast checker. Hier zijn een aantal voorbeelden. 
+
+Achetrgrondkleur van het formulier en de tekst
+![test op dark mode](images/tekst-achtergrond.png)
+Achtergrondkleur van de button en de tekst
+![test op dark mode](images/tekst-button.png)
+Achtergrondkleur van het formulier container en de tekst.
+![test op light mode](images/light-modus-contrast.png)
+
+
+
+### Muis/Trackpad werkt niet
+Zonder een muis/trackpad is een andere manier van een bedienen met een toetsenbord. Daarbij het volgende: 
+
+- Tab: De focus moet door alle interactieve elementen op de pagina bewegen
+- Shift + Tab: Hetzelfde als de Tab-toets, maar dan in omgekeerde volgorde
+- Enter/Return: Volgt een link, activeert (drukt op) een knop
+- Spatiebalk: Wisselt de waarden van selectievakjes, activeert knoppen
+- Pijltoetsen: Scrollen door de inhoud, verplaatsen/selecteren van radioknoppen binnen een groep, soms verplaatsen tussen interactieve menu-items of tabbladen.
+
+Wat dit proces wel kan dwarsbomen zijn developers die accessibility moeilijker maken doormiddel van het verwijderen van focus states of zoeken naar woorden met cmd + f uitzetten omdat ze een scroll library gebruiken.
+
+Op mijn project kan je ook het formulier bedienen zonder een muis. Wanneer je met tab het pagina navigeert, wordt de focus state geactiveerd. Standaard heeft de browser al een focus state. Dat is de outline. Om de outline mooier te maken heb ik de `:focus` psuedo selector gebruikt waar ik een dashed border rondom de interactieve elementen geeft.
+
+De interactieve elementen zijn: 
+- `<input> `
+- `<a href="#">`
+- `<button>`
+
+```css
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline-style: dashed;
+    outline-color: var(--main-kleur);
+    outline-width: 3px;
+
+}
+```
+![focus state](images/focus-state.png)
+
+
 
 ### Screenreader 
 
@@ -550,3 +647,8 @@ Wat is **niet** mogelijk als javascript uitstaat:
 - https://www.quora.com/Will-node-js-work-if-JavaScript-is-disabled
 - https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073
 - https://stackoverflow.com/questions/28278630/node-js-disabling-browsers-javascript
+- https://medium.com/geekculture/how-to-send-data-from-a-form-and-receive-it-with-express-js-3c03af6275b2
+- https://expressjs.com/en/resources/middleware/session.html
+- https://programmingmentor.com/post/save-form-nodejs-mongodb/
+- https://www.makeuseof.com/session-local-storage-differences/
+- 
