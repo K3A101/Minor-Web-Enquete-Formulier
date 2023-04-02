@@ -1,15 +1,50 @@
 console.log('hello')
 //Variabele
 const textAreas = document.querySelectorAll('textarea');
-
-
 const formInputs = document.querySelectorAll('input[type="text"] , input[type="email"]');
 let formRadios = document.querySelectorAll('input[type="radio"]');
+const testRadioButtons = document.querySelectorAll('input[type="radio"]')
+const email = document.getElementById("email");
 
-// console.log(textAreas.target.value)
+
+// testRadioButtons.forEach(button =>{
+//    button.addEventListener('click', ()=>{
+//     const message = `Je hebt ${button.value} gekozen`;
+//     const resultDiv = document.querySelectorAll('.results');
+//     resultDiv.forEach(result=>{
+//          result.innerHTML = message
+//     })
+   
+// })
+ 
+// })
+
+testRadioButtons.forEach(button => {
+    button.addEventListener('change', () => {
+        const getRadioName = button.name;
+        const getRadioValue = button.value;
+
+        if (button.checked) {
+            switch (getRadioName) {
+                case 'wafs-lesstof-beoordeling':
+                    document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
+                    break;
+                case 'wafs-uitleg-beoordeling':
+                    document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
+                    break;
+                case 'wafs-eigen-inzicht':
+                    document.querySelector('.results3').innerHTML = `Je geeft je eigen inzicht een ${getRadioValue}.`
+                    break;
+                default:
+                    break;
+            }
+        }
+    });
+});
+
+
+//-------------------------------------------------Feedback voor de gebruiker
 textAreaValidation()
-
-
 function textAreaValidation() {
     const textAreaInputs = document.querySelectorAll('textarea');
 
@@ -41,12 +76,6 @@ function textAreaValidation() {
 
     })
 }
-
-
-
-
-
-
 
 //-----------------------Textarea waarde opslaan in local storage
 function textAreaFormInputToLocal() {
