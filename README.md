@@ -625,16 +625,29 @@ textarea:focus {
 
 ---
 ## Browsers
-
+Als onderdeel van dit project moest ik mijn prototype op verschillende browser testen. Browser die ik heb gebruikt zijn, chrome, safari, Samsung Internet, Safari IOS en firefox. De bedoeling hiervoor is dat sommige browser zijn en niet alle functionaliteiten ondersteunen. En het criteria is dat het formulier zo goed moeglijk werkt. 
 ## Chrome
+Chrome is mijn meest gebruikte test website alles wat ik wil bereiken mt dit project wordt ondersteund. Er was niks aan te merken waarvan ik een oplossing moest bedenken. 
 ![op chrome](images/form-per-vak.png)
+
+### Bevindingen
+- `:has()` selector wordt ondersteund
+- Formulier validatie met css werkt zoals het hoort
+- Het ziet er goed uit op mobiel
+- Dark mode en donker modus wordt ondersteund
 
 ---
 
 ## Safari
+Het volgende browser waar ik heb getest is op Safari. Safari is een browser voor apple apparaten. Ik heb een ipad dus ik kon ook het formulier op Safari testen. Verder heb ik aantal studenten met een Iphone gevraagd om mijn formulier op hun mobiel te testen. 
 ![safari mobiel](images/safari-mobiel-2.jpg)
 ![safari mobiel](images/safari-mobiel-3.jpg)
+![Radio button error](images/radio-button-error-safari.jpg)
 
+### Bevindingen
+- Het formulier zag er goed uit op kleinere schermen
+- Het formulier validatie van css wa nog te zien
+- De browser ondersteund de :has() selector dus ik kon 
 ## Firefox
 ![firefox](/images/firefox.png)
 ![firefox](/images/valid-firefox.png)
