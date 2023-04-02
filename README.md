@@ -213,7 +213,9 @@ Omdat in firefox geen has ondersteund zien de gebruiker niet de lekker bezig zoa
 ---
 
 ## 3. Data opslaan en later weer verder gaan
-In mijn prototype is het mogelijk om met het enquete op een andere moment afmaken en verder gaan waar je bent gebleven. Ik heb gebruikt gemaakt van de localstorage. Het localstorage is een client-side database vanuit de browser waar de gebruikersdata kan opslaan. Je kan de data opslaan en ook ophalen. Hiermee heb ik javascript gebruikt. 
+In mijn prototype is het mogelijk om met het enquête op een andere moment afmaken en verder gaan waar je bent gebleven. Ik heb gebruikt gemaakt van de localstorage. Het localstorage is een client-side database vanuit de browser waar de gebruikersdata kan opslaan. Je kan de data opslaan en ook ophalen. Hiermee heb ik javascript gebruikt. 
+
+Maar het enige nadeel is dat de localstorage niet beveiligd is. In mijn enquete vullen de studenten  hun persoonlijke gegevens in. Maar het blijft gewoon zichtbaar. Dus een andere alternatief vanaf de client-side zou zijn op de indexedDB of Cookies sessions.
 
 ### Hoe werkt het?
 Als de gebruiker iets invoert wordt de name en de value van de data opgeslagen. Om de data naar de localstorage te sturen gebruik ik de `.setItem()` methode. De name atribuut moet duidelijk zijn zodat je weet wat voor soort data het erover gaat. Verder om de data op te halen had ik de `.getItem()` gebruikt. 
@@ -256,14 +258,90 @@ Hier selecteer ik alle iputs vanuit de html, per input pakt ik de value en de na
 
 
 ## Wat zou gebeuren met het data als javascript uit staat?
-Wanneer javascript uitstaat, kunnen we geen localstorage gebruiker want het is WEB API. Dus wat we kunnen is een server-side database. Dus Als de gebruiker het formulier invult, wordt de data opgeslagen in de database/server...
+Wanneer javascript uitstaat, kunnen we geen localstorage gebruiken want het is WEB API. Dus wat we kunnen doen is een server-side component en database toevoegen. Voor dit prject heb ik geen backend toegevoegd, ik ga alleen opschrijven de server zou moeten doen. Dus Als de gebruiker het formulier invult, wordt de data opgeslagen in de database met behulp van Node.js. Node.js is een onafhankelijk server omgeving. Het gebruikt server-side javascript.
 
-### Hoe zou dat werken?
+Ten eerste moet je node en npm intalleren. Maar we gaan ervan uit dat die geinstalleerd zijn. Als die geinstalleerd moet je eerst een server maken. 
 
-Briefing van de server side 
-- Kijken wat niet wekren op 
-- Wat moet de server doen
-- Voorbeeldpagina maken
+
+### Dingen die je nodig hebben voor je server component
+- Express.js 
+- Body-parser express middleware
+- Cookie-parser express middleware
+- Cookies sessions express middleware 
+- MongoDB Database 
+- Template engine om het formulier te laten zien.
+- Template engine om de bevestiging pagina te laten zien
+
+### Stappen
+1. Nodejs en Npm installeren
+2. package.json installeren met `npm init`
+3. Express installeren met npm `npm install express`
+4. De express server opstellen
+5. De express middleware installeren zoals de bodyparser, cookie-session, moongoose etc. 
+6. URL Endpoints maken waar de data opgeslagen wordt,
+7. De express modlues gebruiken
+
+
+### Data opslaan in de server
+Je heb alles geïnstalleerd en heeft een server. Hoe verder. Voor het formulier op de HTML Pagina moet een `POST` method toevoegen zodat die data verstuurd kan worder naar de server. In de server maak je een get request functies met de `body-parser` functionaliteit. Dus de informatie die de gebruiker had ingevuld wordt verstuurd in de MongoDB Database naar een URL route/endpoint. Door de body-parser wordt de informatie opgeslagen in `JSON` formaat. 
+
+
+### Data in het formulier laten staan 
+Stel je voor dat gebruiker later met het enquête wil doorgaan. Hoe zou dat werken met een server component. Hiermee gebruik je de `express-session` middleware. Als de gebruiker terug komt dan ga de server kijken naar de id van de user session  in de  database en als hij een match vind dan  geef de server de bijbehorende ingevulde data van de ID weer op het formulier.
+
+
+### Wat geeft de Server weer als de gebruiker helemaal klaar is ?
+Als de gebruiker klaar is dan krijgt de gebruiker een bevestiging pagina terug.
+![Bevestiging pagina]()
+
+In de server zou ik een POST route toevoegen die naar de `/formulier-bevestiging`. En dan deze bericht terug geven aan de client: '*Bedankt voor het invullen van het enquête*'. Hier is een verkorte versie van wat ik bedoelde. 
+
+```html
+<!-- formulier.html -->
+
+<form action="/formulier-bevestiging" method="POST">
+<!-- De enquête -->
+
+</form>
+
+
+```
+
+
+
+```javascript
+// app.js
+ app.post("/formulier-bevestiging", (req, res)=>{
+    // Code waar de data geatuurd wordt naar de database met body-parser
+    res.send('Bedankt voor het invullen van het enquête!)
+    // of
+    res.render('formulier-bevestiging')
+
+ })
+```
+
+```html
+<!-- Formulier bevestiging.js -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Bevestiging</title>
+</head>
+<body>
+
+    <main>
+        <h1>Bedank voor het invullen van deze enquête!</h1>
+    </main>
+    
+</body>
+</html>
+```
+
+
 
 ---
 
@@ -387,6 +465,7 @@ Om de default mooier te maken heb ik de @media features van css gebruikt. Voor d
 ```
 
 ### In CSS
+![css](./images/css-lightmode.png)
 
 
 ## Progressive enhancement
@@ -398,11 +477,42 @@ Om de default mooier te maken heb ik de @media features van css gebruikt. Voor d
 
 ---
 # Testen
+Het volgende onderdeel van dit procesverslag is een testverslag met de bevindingen die ik heb opgedaan tijdens mij onderzoek van bepaalde browser functionaliteiten. 
+
 ## Geteste features
+### CSS Uitzetten
+De eerste test die ik heb gedaan. Is in mijn developer tool de css uitzetten. In het geval dat de css niet wordt geladen voor een of andere manier, dan krijg je alleen de HTML pagina te zien. Je kan nog steeds het formulier invullen en naar de volgende pagina gaan. 
+
+Dingen die **niet** mogelijk zijn:
+- Geen opmaak
+- Geen kleur of feedback van de gebruik input
+- Radio buttons zichtbaar en onder elkaar 
+- De progres menu op Mobiel wordt zichtbaar en is onder elkaar te zien.
+
+Dingen die **wel** mogelijk zijn:
+- Vragen overslaan en doorgaan naar het volgende vak.
+- Formulier invullen
+- Feedback krijgen met de fallback foutmeldingen van de browser
+- De standaard dark en licht modus van de browser.
+
+
+### HTML paginas
+![Homepagina in darkmode](images/html-dark.png)
+![Vakkenpagina in lightmode](images/html-vak-dark.png)
+
+
+![Homepagina in darkmode](images/html-light.png)
+![Vakkenpaginas in lightmode](images/html-vak-light.png))
+
 
 ### Javascript uitzetten
+De browser bestaat op een groot gedeelte uit javascript. Javascript zorgt ervoor dat je website veel interactiever en dynamisch wordt. Maar er is een groep waar sommige browser geen javascript ondersteund bijvoorbeeld lynx of mensen die standaard javascript uit hebben of mensen met apparaten die niet zo goed kan functioneren met javascript. Hoe kunnen groepen het Enquete invullen zonder javascript. 
 
-### Cookies uitzetten
+Wat is **niet** mogelijk als javascript uitstaat:
+- Data wordt niet opgeslagen in de localstorage van de browser
+- Geen Javascript formulier validatie met 
+- Mijn textarea geeft geen feedback als de gebruiker iets intoets. 
+
 
 ### Slechte internet verbinding
 
@@ -410,7 +520,9 @@ Om de default mooier te maken heb ik de @media features van css gebruikt. Voor d
 
 ### Cookies uitzetten
 
-### Kleurcontrast
+### Kleur
+
+### Muis/Trackpad
 
 ### Screenreader 
 
@@ -426,3 +538,15 @@ Om de default mooier te maken heb ik de @media features van css gebruikt. Voor d
 ## Samsung Internet
 
 ## PrinceXM
+
+---
+# De lagen in een notendop
+
+
+---
+
+# Bronnen
+- https://dev.to/rdegges/please-stop-using-local-storage-1i04
+- https://www.quora.com/Will-node-js-work-if-JavaScript-is-disabled
+- https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073
+- https://stackoverflow.com/questions/28278630/node-js-disabling-browsers-javascript
