@@ -7,17 +7,18 @@ const testRadioButtons = document.querySelectorAll('input[type="radio"]')
 const email = document.getElementById("email");
 
 
-// testRadioButtons.forEach(button =>{
-//    button.addEventListener('click', ()=>{
-//     const message = `Je hebt ${button.value} gekozen`;
-//     const resultDiv = document.querySelectorAll('.results');
-//     resultDiv.forEach(result=>{
-//          result.innerHTML = message
-//     })
-   
-// })
- 
-// })
+
+email.addEventListener("input", (event) => {
+   if(email.validity.valueMissing){
+       email.setCustomValidity("Ik verwacht het meest creatieve email ooit!");
+   } else if (email.validity.typeMismatch) {
+        email.setCustomValidity("Dit is nog geen creatieve email");
+    } else {
+        email.setCustomValidity("");
+    }
+});
+
+//---------------------------Show the value that the user chose
 
 testRadioButtons.forEach(button => {
     button.addEventListener('change', () => {
