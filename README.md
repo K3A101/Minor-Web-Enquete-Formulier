@@ -597,7 +597,6 @@ Zonder een muis/trackpad is een andere manier van een bedienen met een toetsenbo
 - Spatiebalk: Wisselt de waarden van selectievakjes, activeert knoppen
 - Pijltoetsen: Scrollen door de inhoud, verplaatsen/selecteren van radioknoppen binnen een groep, soms verplaatsen tussen interactieve menu-items of tabbladen.
 
-Wat dit proces wel kan dwarsbomen zijn developers die accessibility moeilijker maken doormiddel van het verwijderen van focus states of zoeken naar woorden met cmd + f uitzetten omdat ze een scroll library gebruiken.
 
 Op mijn project kan je ook het formulier bedienen zonder een muis. Wanneer je met tab het pagina navigeert, wordt de focus state geactiveerd. Standaard heeft de browser al een focus state. Dat is de outline. Om de outline mooier te maken heb ik de `:focus` psuedo selector gebruikt waar ik een dashed border rondom de interactieve elementen geeft.
 
@@ -635,6 +634,7 @@ Chrome is mijn meest gebruikte test website alles wat ik wil bereiken mt dit pro
 - Formulier validatie met css werkt zoals het hoort
 - Het ziet er goed uit op mobiel
 - Dark mode en donker modus wordt ondersteund
+- Data wordt opgeslagen in local storage
 
 ---
 
@@ -646,18 +646,89 @@ Het volgende browser waar ik heb getest is op Safari. Safari is een browser voor
 
 ### Bevindingen
 - Het formulier zag er goed uit op kleinere schermen
-- Het formulier validatie van css wa nog te zien
-- De browser ondersteund de :has() selector dus ik kon 
+- Het formulier validatie van css was nog te zien
+- De browser ondersteund de :has() selector dus ik kon de menu openen
+- Safari kan ondersteund de appearance property niet dus toe ik hem opende kon ik nog steeds de radio buttons zien, dus in mijn css heb ik ook opacity 0 gegeven aan de radio buttons
+- Donker modus en licht modus werkt prima 
+-  Data wordt opgeslagen in local storage
+
+
 ## Firefox
+Het volgende browser waarmee ik heb getest is de Microsoft Firefox. In de browser moets ik wel een beetje nadenken over hoe ik bepaalde dingen met css ging doen in plaats van javascript. Want sommige css properties worden niet ondersteund.
+
 ![firefox](/images/firefox.png)
 ![firefox](/images/valid-firefox.png)
 
+### Bevindingen
+- Het formulier zag er goed uit op kleinere schermen
+- Het formulier validatie van css was nog te zien, maar de `lekker bezig` gedeelte niet
+- De browser ondersteund de :has() selector niet dus ik kon de menu niet openen, dus ik gebruik als alternatief de sibling selector `~`.
+- Donker modus en licht modus werkt prima 
+- Data wordt opgeslagen in local storage
+
 
 ## Samsung Internet
+Samsung Galaxy is een browser voor Samsung apparaten. Ik beschik van een samsung telefoon dus het was voor mij mogelijk om het formulier te testen. 
 ![samsung internet](/images/samsung-internet.jpg)
 ![samsung internet feedback](/images/samsung-internet-feedback.jpg)
+![samsung internet dark mode](/images/samsung-internet-dark.jpg)
+
+### Bevindingen
+- `:has()` selector wordt ondersteund
+- Formulier validatie met css werkt zoals het hoort
+- Het ziet er goed uit op mobiel
+- He ondersteund dark mode een beetje maar het pakt  niet vanuit mijn css. De browser zel zelf zijn eigen versie van dark mode en overschrijf mijn color scheme in mujn css.
+- Data wordt opgeslagen in de local storage
+
 
 ## PrinceXM
+Als laatste moest ik een obscure browser kiezen. Ik heb gekozen om mijn prototype te testen op princeXML. PrinceXML is een browser waar je HTML pagina's en CSS kan omzetten in een PDF bestand. Ik heb de gratis versie geinstalleerd op mijn windows computer en dan met de terminal een pdf output ervan gemaakt. Op hun site hebben ze ook een generator waarvan je html pagina's en css bestanden kan ingooien. Daarna genereer de browser een pdf bestand voor je.
+
+## Test 1
+Dit is mijn eerste test met princeXML. De opmaak van de enquête klopte niet helemaal. 
+![test 1 - Home](/images/test-1.png)
+![Test 1 - Vak](/images/test-1.1.png)
+
+
+## Test 2
+
+### Stap 1: HTML pagina toevoegen
+![Html pagina ingooien](/images/stap-1-princexml.png)
+
+### Stap 2: CSS stylesheet toevoegen
+![Css stylesheey ingooien](/images/stap-2-princexml.png)
+
+### Stap 3: PDF output
+![PDF Output](/images/stap-3-princexml.png)
+![PDF](/images/test-3.jpg)
+
+
+## Test 3
+![PDF](/images/test-4.png
+
+### Wat niet wordt ondersteund 
+
+```terminal
+
+prince: scripts/script.js: error: can't open input file: No such file or directory
+prince: style.css:43: warning: unknown media feature 'prefers-color-scheme'
+prince: style.css:71: warning: unknown media feature 'prefers-color-scheme'
+prince: style.css:271: warning: unknown pseudo-element '::placeholder'
+prince: style.css:301: warning: unknown pseudo-element '::placeholder'
+prince: style.css: warning: unsupported properties: gap, place-items
+
+```
+
+Vervolgens krijg te zien welke css properties niet ondersteund wordt:
+- Ik moest eerst de path van mijn css en javascript een beetje aanpassen want anders doet het niet goed. Ik had mijn script en sheets in een bestand
+- PrinceXML ondersteund niet de `prefers-color-scheme` media feature dus het formulier is alleen te zien in lightmode. Op zich is dat niet erg want je kan nog steeds het formulier invullen.
+- Door de grootte van het A4, kan je de menu niet zien om het progress te zien. Anders moet ik bij de media queries een beetje aanpassen.
+- Het kan wel werken met custom properties dus mijn kleuren us te zien.
+- Mijn custom fonts zijn goed geladen
+- Je kan het formulier invullen
+- Grid properties  zoals gap en place-items worden niet ondersteund door princeXML. 
+- Links gaat naar de juiste pagina, maar open alleen in de browser.
+
 
 ---
 # De lagen in een notendop
