@@ -383,6 +383,7 @@ label[for="email"] {
     display: flex;
     flex-direction: column;
     padding: 1em;
+    font-weight: bold;
 }
 
 
@@ -392,8 +393,14 @@ input[type="email"] {
 }
 
 
+#studentgegevens input {
+    margin-top: 1em;
+}
 
 
+#studentgegevens span {
+    font-weight: 400;
+}
 /******************/
 /* FORM VALILDATE */
 /******************/
@@ -435,7 +442,7 @@ input:required {
     color: var(--valid-form-data-kleur);
     position: absolute;
     font-weight: bold;
-    transform: translateY(2em);
+    transform: translateY(2.8em);
     right: 5em;
 }
 
@@ -583,17 +590,14 @@ a.vorige-btn:focus {
 /******************/
 /* RESPONSIVENESS */
 /******************/
-@media (min-width: 30em) {
-    main {
+
+/* Voor princexml zet de main in min-width: 40em en de rest in 45em */
+@media (min-width: 40em) {
+       main {
         margin: 0 auto;
         width: 50%;
         max-width: 50rem;
     }
-}
-
-
-@media (min-width: 40em) {
-
 
 
     header a {
