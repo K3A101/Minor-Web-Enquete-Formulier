@@ -620,8 +620,32 @@ textarea:focus {
 
 
 
-### Screenreader 
+### Screenreader test
+De laatste test die ik heb gedaan is de screenreader test. Zo'n test is belangrijk hiermee, weet je zeker dat je semantische html had geschreven. Verder maak ik het enquete toegankelijk voor slechtzienden, mensen die blind zijn maar ook mensen die tijdelijk niet aan de scherm kan kijken.
 
+Om de test te doen heb ik Narrator aangezet. Narrator is de screenreader van windows. Het was te vinden in mijn accessibility instellingen.
+
+### Bevindingen
+#### Studentgegevens
+- Het leest de lijst met links en zegt daar achter waar op de lijst ze staan.
+- Het studentgegevens formulier wordt te snel gelezen. Soms hoor je de feedback 'lekker bezig' ook. 
+- De screen reader benoemt welke input veld required is. 
+- De screenreader voorleest het hele formulier en ook de placeholder in, terwijl de gebruiker al data daar hebben staan
+
+#### Vak formulier
+- In het vakken formulier is iets meer volgorde en structuur.
+- Het screen reader leest al de links voor en dan gaat hij naar het formulier.
+- Verder leest hij de eerste level heading en dan de tweede level heading.
+- De legend wordt niet als eerste voorgelezen terwijl op de pagina wel als eerste staat. 
+- Verder gaat die door naar de volgende vragen en leest de textarea met de placeholder.
+- Vervolgens zegt de lijst van radio buttons met daarin de waardes. 
+- Als laatste worden de buttons om naar de volgende pagina te gaan ook voorgelezen. 
+
+
+
+### Fouten om te voorkomen
+- Ervoor zorgen dat alle radio buttons die bij elkaar horen dezelfde name atribuut hebben. Anders beschouwt de screenreader die als een aparte component. 
+- Eerst werd de required twee keer gelezen. Want ik had ook aria required en de required atribuut naast elkaar dus als je alleen het atribuut houdt, dan is het genoeg
 ---
 ## Browsers
 Als onderdeel van dit project moest ik mijn prototype op verschillende browser testen. Browser die ik heb gebruikt zijn, chrome, safari, Samsung Internet, Safari IOS en firefox. De bedoeling hiervoor is dat sommige browser zijn en niet alle functionaliteiten ondersteunen. En het criteria is dat het formulier zo goed moeglijk werkt. 
