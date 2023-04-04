@@ -8,16 +8,6 @@ const email = document.getElementById("email");
 
 
 
-email.addEventListener("input", (event) => {
-   if(email.validity.valueMissing){
-       email.setCustomValidity("Ik verwacht het meest creatieve email ooit!");
-   } else if (email.validity.typeMismatch) {
-        email.setCustomValidity("Dit is nog geen creatieve email");
-    } else {
-        email.setCustomValidity("");
-    }
-});
-
 //---------------------------Show the value that the user chose
 
 testRadioButtons.forEach(button => {
@@ -36,6 +26,71 @@ testRadioButtons.forEach(button => {
                 case 'wafs-eigen-inzicht':
                     document.querySelector('.results3').innerHTML = `Je geeft je eigen inzicht een ${getRadioValue}.`
                     break;
+                case 'csstr-lesstof-beoordeling' :
+                    document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
+                 break;
+                case 'csstr-uitleg-beoordeling':
+                    document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
+                    break;
+                case 'csstr-eigen-inzicht':
+                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    break;
+                case 'pwa-lesstof-beoordeling':
+                    document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
+                    break;
+                case 'pwa-uitleg-beoordeling':
+                    document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
+                    break;
+                case 'pwa-eigen-inzicht':
+                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    break;
+                case 'brotech-lesstof-beoordeling':
+                    document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
+                    break;
+                case 'brotech-uitleg-beoordeling':
+                    document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
+                    break;
+                case 'brotech-eigen-inzicht':
+                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    break;
+                case 'realtimeweb-lesstof-beoordeling':
+                    document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
+                    break;
+                case 'realtimeweb-uitleg-beoordeling':
+                    document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
+                    break;
+                case 'realtimeweb-eigen-inzicht':
+                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    break;
+                case 'human-centred-design-lesstof-beoordeling':
+                    document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
+                    break;
+                case 'human-centred-design-uitleg-beoordeling':
+                    document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
+                    break;
+                case 'human-centred-design-eigen-inzicht':
+                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    break;
+                case 'meesterproef-lesstof-beoordeling':
+                    document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
+                    break;
+                case 'meesterproef-uitleg-beoordeling':
+                    document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
+                    break;
+                case 'meesterproef-eigen-inzicht':
+                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    break;
+                case 'weekly-nerd-lesstof-beoordeling':
+                    document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
+                    break;
+                case 'weekly-nerd-uitleg-beoordeling':
+                    document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
+                    break;
+                case 'weekly-nerd-eigen-inzicht':
+                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    break;
+
+                    
                 default:
                     break;
             }
@@ -135,8 +190,6 @@ formInputs.forEach(input => {
 loadFormInputToLocal();
 
 
-
-
 //------------------------------------Radio buttons Opslaan in Local Storage
 
 function saveFormRadiosToLocal() {
@@ -166,3 +219,13 @@ formRadios.forEach(input => {
 loadFormRadiosFromLocal();
 
 
+//------------------------ email form validation
+email.addEventListener('input', (e) => {
+    if (email.validity.valueMissing) {
+        email.setCustomValidity("Ik verwacht het meest creatieve email ooit!");
+    } else if (email.validity.typeMismatch) {
+        email.setCustomValidity("Dit is nog geen creatieve email");
+    } else {
+        email.setCustomValidity("");
+    }
+});
