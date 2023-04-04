@@ -1,5 +1,5 @@
 # Enquête voor Minor Web
-In de vak van browser technologie ga ik een robuuste en toegankelijk website maken. Mijn website moet zo goed mogelijk kunnen werken op alle browser, alle schermen en in verschillende soorten contexten. Dus ik moet nadenken over responsive pagina's, goeie kleurcontrasten, fallback lettertype, alt teksten bij afbeeldingen etc. Verder ga ik onderzoek over wat progressive enhancement is om een toegankelijk website te maken. Voor mijn eindopdracht ga ik een Enquete maken voor studenten die  Minor web heb gevolgd. De bedoeling dat de studenten hun ervaring geven die ze hebben meegemaakt tijdens de minor.
+In het vak van browser technologie ga ik een robuuste en toegankelijk website maken. Mijn website moet zo goed mogelijk kunnen werken op alle browser, alle schermen en in verschillende soorten contexten. Dus ik moet nadenken over responsive pagina's, goede kleurcontrasten, fallback lettertype, alt teksten bij afbeeldingen etc. Verder ga ik onderzoek doen over wat progressive enhancement is om een toegankelijk website te maken. Voor mijn eindopdracht ga ik een Enquete maken voor studenten die het  Minor web hadden gevolgd. De bedoeling is dat de studenten hun ervaring kunnen geven die ze hebben meegemaakt tijdens de Minor.
 
 ---
 
@@ -7,7 +7,7 @@ In de vak van browser technologie ga ik een robuuste en toegankelijk website mak
 - Link naar de Demo: https://k3a101.github.io/Minor-Web-Enquete-Formulier/
 
 
-Ik heb een design gemaakt voor de enquete. Mijn enquete bestaat uit een pagina waar de studenten hun gegevens kan invullen zoals hun email, studentennummer, naam en achternaam. Maar ik denk bij een enquete hoeft je eigenlijk geen persoonlijk gegevens invullen, want anders krijg je geen eerlijke antwoord. Dus deze pagina moet eigenlijk optioneel zijn. Maar voor school doeleinden wilde ik de validatie laten zien die ik heb gemaakt met css. Als je op de volgende knop gaat, dan krijg je de vragenlijst voor de vakken. Er is totaal acht vakken. Dus elke vak heeft een vragenlijst met vijf vragen.
+Ik heb een design gemaakt voor de enquête. Mijn enquête bestaat uit een pagina waar de studenten hun gegevens kunnen invullen zoals hun email, studentennummer, naam en achternaam. Maar ik denk bij een enquête hoeft je eigenlijk geen persoonlijk gegevens invullen, want anders krijg je geen eerlijke antwoord terug. Dus deze pagina moet eigenlijk optioneel zijn. Maar voor school doeleinden wilde ik de validatie laten zien die ik heb gemaakt met css. Als je op de volgende knop klikt, dan ga je naar de vragenlijst voor de vakken. Er is totaal acht vakken. Dus elke vak heeft een vragenlijst met vijf vragen.
 
 De vragen:
 1. Welke cijfer zou je deze vak geven?
@@ -23,20 +23,21 @@ De vragen:
 
 ---
 ## Functionaliteiten van het Prototype
-De enquete moet op bepaalde voorwaarde doen en die voorwaarden moeten  zo geod mogelijke werken op alle browser , op verschillende scherm grootte en ook wanneer    
- bepaalde features uit is zoals cookies en Javascript. Onderaan staan de core functionaliteiten die  op elke moment zo goed moeten werken. 
+De enquête moet op bepaalde voorwaarde voldoen en die voorwaarden moeten  zo goed mogelijke werken op alle browser , op verschillende scherm grootte en ook wanneer    
+ bepaalde features uitgezet zijn zoals cookies en Javascript. Onderaan staan de core functionaliteiten die  op elke moment zo goed moeten werken. 
 
 ### Core functionaliteiten voor de enquête - Zelf bedacht
-- foutmelding, wat is er fout ingevuld wanneer je op de submit klit
+- foutmelding, wat is er fout ingevuld wanneer je op de submit klikt
 - Hoe je de foutmelding presenteert
 - Niet alle informatie tegelijkertijd.
+- Data in het formulier opslaan
 
 ### Browsers die ik ga gebruiken:
 - Safari op desktop en Iphone
 - Google Chrome desktop en mobiel
 - Firefox desktop en mobiel
 - Samsung Internet mobiel
-- UC browser/PrinceXML
+- PrinceXML
 
 ## Nice To have
 
@@ -64,6 +65,7 @@ De enquete moet op bepaalde voorwaarde doen en die voorwaarden moeten  zo geod m
 ## Criteria voor de eindopdracht
 Voor de beoordeling  werd er verschillende criteria's opgesteld die moet werken op alle genoemde browsers en ook zonder javascript. Ik ga per criteria grondig uitleggen hoe ik heb ze allemaal heb aangepakt.
 
+### Criterias
 - Zorg ervoor dat de gebruiker niet teveel formuliervelden in 1 keer ziet.
 - Validatie: Zorg ervoor dat het formulier compleet wordt ingevuld. Geef duidelijke foutmeldingen. Bedenk zelf wanneer en hoe de validatie zal plaatsvinden.
 - Als ik de enquete niet afkrijg, wil ik later weer verder gaan met waar ik ben gebleven.
@@ -519,7 +521,7 @@ Voor de formulier validatie maak ik geen zorgen want de browser zelf heeft een f
 
 ---
 ### Slechte internet verbinding
-Een andere scenario die ik heb over nagedacht is een gebruiker die het formulier wil invullen en maar in de trein zit bijvoorbeeld en heel trage internetverbinding heeft. Wat dan? Om dit te testen heb ik in mijn netwerk tab in de developer tool, het netwerk op slow 3g geplaatst. Wat opvallend is dat het duurt langer om naar de volgende pagina te gaan. In firefox als ik de netwerk op het laagste optie zet, dus de gprs dan duurt het langer om het css te laden.  Dus misschien krijgt de gebruiker dan eerst een puur html pagina zonder opmaak te zien. Maar ze kunnen het formulier invullen.
+Een andere scenario die ik heb over nagedacht is een gebruiker die het formulier wil invullen en maar in de trein zit bijvoorbeeld en heel trage internetverbinding heeft. Wat dan? Om dit te testen heb ik in mijn netwerk tab in de developer tool, het netwerk op slow 3g geplaatst. Wat opvallend is dat het duurt langer om naar de volgende pagina te gaan. In firefox als ik de netwerk op het laagste optie zet, dus de gprs dan duurt het langer om het css te laden.  Dus misschien krijgt de gebruiker dan eerst een puur html pagina zonder opmaak te zien. Maar ze kunnen het formulier invullen. Wat ik heb gemerkt bij slechte internet verbinding is dat de custom fonts later word geladen, dus de gebruiker ziet de fallback fonts Arial die ik heb toegevoegd in de css bestand.
 
 
 ### Een Oplossing
@@ -757,10 +759,54 @@ Vervolgens krijg te zien welke css properties niet ondersteund wordt:
 
 ---
 # De lagen in een notendop
+Uiteindelijk heb ik mijn formulier gemaakt van de browser technologieen en functionaliteiten. De core functionaliteiten van het formulier waren dat de gebruiker hun informatie in het formulier kunnen invullen en versturen, maar ook moet  de gebruiker weten wat hij fout en goed heeft ingevuld dus  vorm validatie en feedback. Al deze functionaliteiten heb ik in drie verschillende lagen gemaakt. 
 
+## Functionele laag
+In de functionele laag heb je semantische HTML structuur. Voor een formulier moet je de `form` tag gebruiken. Om gegevens in te vullen gebruik je de `input` element. Elke onderdelen van het formulier die iets met elkaar te maken hebben gaat in een `fieldset`.  
+
+In de functionele laag kun je alsnog  het formulier valideren. Met formulier validatie zorg je ervoor  dat de gebruiker de juiste gegevens invullen. In de HTML moet je de juiste input types gebruiken. In mij geval heb ik de input type email gebruikt waar gebruikers hun email moet invullen. Waar getallen ingevuld moet worden gebruik ik input type num of tel. En zo blijft het. Het gevolg zijn dat bij mobiel de juiste toetsenbord naar voren komt, maar ook wordt het duidelijker voor mensen die een screenreader gebruiken. 
+
+### Gedaan in de functionele / reliable laag
+- HtML structuur met formulier elementen
+- Onderdelen met elkaar groeperen met `fieldset` en `legend`
+- HTML formulier validatie (juiste input types, required atribuut etc.)
+- Progressive disclosure door elk vak in een apart HMTL bestand te zetten
+- Pagina's linken met elkaar door `<a>` tags te gebruiken. 
+- Foutmeldingen als de gebruiker iets verkeerd had ingevuld
+- Kan het formulier in het donker of licht modus zien. `<meta>`
+
+## Usuable laag 
+In de usuable laag heb ik nagedacht over de designspatterns die ik gebruikt. Bij formulier moet de labels onder elkaar komen te staan anders moet je veel met je ogen scannen. Vervolgens heb ik rekening gehouden met constentie, bijvoorbeeld alle buttons hebben dezelfde vorm en kleur, input velden hebben dezelfde kleur. Alle pagina's zijn  het zelfde. 
+
+In de ze laag kwam een progressive enhancement, de opmaak. Van een normale html pagina naar een mooie opgemaakte pagina's. 
+
+### Gedaan in deze laag
+- Kleur toegevoegd met aparte kleur voor donkere en licht modus
+- Custom fonts toegevoegd
+- Onzichtbare radio buttons 
+- Andere focus, hover state
+- CSS vorm validatie met `:valid` en `:invalid` psuedo classes
+- Foutmelding geven met css; `::after`. 
+- Formulier kan ook ingevuld worden met kleinere schermen
+
+## Pleasurable laag
+Het is de deel waar gebruikers een goede gevoel krijgt wanneer hij de site gebruikt. Meestal is de site heel mooi, met veel animatie en transities. Voor mij is de javascript een enhancement. Want met javascript kunnen gebruikers data in het formulier opslaan en later verder invullen. Ook zijn er meer persoonlijke feedback die verstuurd wordt naar de gebruikers. 
+
+### Gedaan in deze laag
+- Javascript vorm validatie
+- Feedback teruggeven als de gebruiker 
+- Data worden in het formulier opgeslagen met LocalStorage
 
 ---
 
+## Wat zou ik anders doen!
+Als ik meer tijd zou hebben zou ik de volgende dingen doen:
+- Ik zou een server component maken om de data in de server op te slaan
+- Ik zou een introductie pagina maken met een korte inleiding over de enquête met daarbij een start knop. 
+- De studentgegevens formulier zou ik als een optionele opties hebben en aan het einde van het formulier doen voor de bevestiging.
+- Ik zou meer vloeinde transities toevoegen als je van pagina's verandert.
+
+---
 # Bronnen
 - https://dev.to/rdegges/please-stop-using-local-storage-1i04
 - https://www.quora.com/Will-node-js-work-if-JavaScript-is-disabled

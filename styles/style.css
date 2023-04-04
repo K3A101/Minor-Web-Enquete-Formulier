@@ -100,6 +100,10 @@ body {
 
 }
 
+body > p {
+    text-align: center;
+    padding: 1em;
+}
 
 legend {
     font-family: var(--kopjes);
@@ -153,8 +157,6 @@ header a {
     color: var(--link-kleur);
     background-color: var(--niet-current-link);
     padding: .2em;
-    /* border: 0 dashed var(--button-andere-state-tekst); */
-    /* transition: border-width ease 1s; */
 }
 
 header a:hover,
@@ -284,8 +286,7 @@ input[type="email"]:focus,
 textarea:focus {
     outline-style: dashed;
     outline-color: var(--main-kleur);
-    outline-width: 3px;
-
+    outline-width: 3px;    
 }
 
 

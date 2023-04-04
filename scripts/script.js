@@ -33,7 +33,7 @@ testRadioButtons.forEach(button => {
                     document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
                     break;
                 case 'csstr-eigen-inzicht':
-                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    document.querySelector('.results3').innerHTML = `Je geeft je eigen inzicht een ${getRadioValue}.`
                     break;
                 case 'pwa-lesstof-beoordeling':
                     document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
@@ -42,7 +42,7 @@ testRadioButtons.forEach(button => {
                     document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
                     break;
                 case 'pwa-eigen-inzicht':
-                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    document.querySelector('.results3').innerHTML = `Je geeft je eigen inzicht een ${getRadioValue}.`
                     break;
                 case 'brotech-lesstof-beoordeling':
                     document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
@@ -51,7 +51,7 @@ testRadioButtons.forEach(button => {
                     document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
                     break;
                 case 'brotech-eigen-inzicht':
-                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    document.querySelector('.results3').innerHTML = `Je geeft je eigen inzicht een ${getRadioValue}.`
                     break;
                 case 'realtimeweb-lesstof-beoordeling':
                     document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
@@ -60,7 +60,7 @@ testRadioButtons.forEach(button => {
                     document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
                     break;
                 case 'realtimeweb-eigen-inzicht':
-                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    document.querySelector('.results3').innerHTML = `Je geeft je eigen inzicht een ${getRadioValue}.`
                     break;
                 case 'human-centred-design-lesstof-beoordeling':
                     document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
@@ -69,7 +69,7 @@ testRadioButtons.forEach(button => {
                     document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
                     break;
                 case 'human-centred-design-eigen-inzicht':
-                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    document.querySelector('.results3').innerHTML = `Je geeft je eigen inzicht een ${getRadioValue}.`
                     break;
                 case 'meesterproef-lesstof-beoordeling':
                     document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
@@ -78,7 +78,7 @@ testRadioButtons.forEach(button => {
                     document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
                     break;
                 case 'meesterproef-eigen-inzicht':
-                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    document.querySelector('.results3').innerHTML = `Je geeft je eigen inzicht een ${getRadioValue}.`
                     break;
                 case 'weekly-nerd-lesstof-beoordeling':
                     document.querySelector('.results1').innerHTML = `Je geeft de lesstof een ${getRadioValue}.`
@@ -87,7 +87,7 @@ testRadioButtons.forEach(button => {
                     document.querySelector('.results2').innerHTML = `Je geeft de uitleg een ${getRadioValue}.`
                     break;
                 case 'weekly-nerd-eigen-inzicht':
-                    document.querySelector('.results3').innerHTML = `Je geeft de eigen inzicht een ${getRadioValue}.`
+                    document.querySelector('.results3').innerHTML = `Je geeft je eigen inzicht een ${getRadioValue}.`
                     break;
 
                     
