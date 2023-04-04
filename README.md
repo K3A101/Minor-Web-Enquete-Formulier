@@ -76,7 +76,7 @@ Voor de beoordeling  werd er verschillende criteria's opgesteld die moet werken 
 
 
 ## 1. Niet alle formuliervelden laten zien
-Ik heb dit criteria opgelost door de vakken te verdelen  op een HTML pagina. Dus een vak heef zijn eigen html pagina. Ik heb ze allemaal gekoppeld met `<a>` tag. Dus ik heb bovenaan een lijst met de html pagina's linkt. Dus het zorgt ervoor dat de gebruiker terug kan gaan of een vraag kan skippen. Zonder deze oplossing blijft het een hele lange formulier. Dus deze manier kan ook zonder javascript werken. 
+Ik heb dit criteria opgelost door de vakken te verdelen  op een HTML pagina. Dus een vak heeft zijn eigen html pagina. Ik heb ze allemaal gekoppeld met `<a>` tag. Dus ik heb bovenaan een lijst met de html pagina's links. Het zorgt ervoor dat de gebruiker terug kan gaan of een vraag kan overslaan. Zonder deze oplossing blijft het een hele lange formulier. Dus deze manier kan ook zonder javascript werken. 
 
 ## 2. Formulier validatie
 Bij formulier validatie wordt ervoor gezorgt dat de gebruiker de juiste informatie in het formulier invult. Belangrijk bij de validatie zijn dat je moet aangeven wat de gebruiker fout heeft ingevuld.  Bij de formulier validatie heb je te maken met progressive enhancement. Want in de Html heb je al ingebouwde formulier validatie. In de css heb je de `:valid` en`invalid` pseudo selectors en als meer vette foutmelding wil doen kan je javascript gebruiken.
@@ -157,7 +157,7 @@ Ook heb ik een bericht toegevoegd "vul maar iets in" Ik heb een `span` geplaats 
 #### In chrome
 ![Valid invoerveld](./images/valid-data.png)
 
-Hier heb ik de `:valid` selector gebruikt. Deze state wordt geactiveerd wanneer de gebruiker de juiste informatie heb ingevuld. Ik heb daarbij een motivatie bericht (lekker bezig) toegevoegd met de `content` property in de after selector. Maar hier heb ik wel de has gebruikt. Voor firefox die geen has selector ondersteunen zie je alleen maar de vinkje. 
+Hier heb ik de `:valid` selector gebruikt. Deze state wordt geactiveerd wanneer de gebruiker de juiste informatie heb ingevuld. Ik heb daarbij een motivatie bericht (lekker bezig) toegevoegd met de `content` property in de after selector. Maar hier heb ik wel de has gebruikt. Voor firefox die geen has selector ondersteund zie je alleen maar de vinkje. 
 
 ```css
 
@@ -217,7 +217,7 @@ Omdat in firefox geen has ondersteund zien de gebruiker niet de lekker bezig zoa
 ## 3. Data opslaan en later weer verder gaan
 In mijn prototype is het mogelijk om met het enquête op een andere moment afmaken en verder gaan waar je bent gebleven. Ik heb gebruikt gemaakt van de localstorage. Het localstorage is een client-side database vanuit de browser waar de gebruikersdata kan opslaan. Je kan de data opslaan en ook ophalen. Hiermee heb ik javascript gebruikt. 
 
-Maar het enige nadeel is dat de localstorage niet beveiligd is. In mijn enquete vullen de studenten  hun persoonlijke gegevens in. Maar het blijft gewoon zichtbaar. Dus een andere alternatief vanaf de client-side zou zijn op de indexedDB of Cookies sessions.
+Maar het enige nadeel is dat de localstorage niet beveiligd is. In mijn enquête vullen de studenten  hun persoonlijke gegevens in. Maar het blijft gewoon zichtbaar. Dus een andere alternatief vanaf de client-side zou zijn op de indexedDB of Cookies sessions.
 
 ### Hoe werkt het?
 Als de gebruiker iets invoert wordt de name en de value van de data opgeslagen. Om de data naar de localstorage te sturen gebruik ik de `.setItem()` methode. De name atribuut moet duidelijk zijn zodat je weet wat voor soort data het erover gaat. Verder om de data op te halen had ik de `.getItem()` gebruikt. 
@@ -256,11 +256,11 @@ formInputs.forEach(input => {
 loadFormInputToLocal();
 
 ```
-Hier selecteer ik alle iputs vanuit de html, per input pakt ik de value en de name atribuut en zetten ze in de localstorage. Daarna haal ik alle waarde vanuit de localstorage met de `.getItem() `methode.
+Hier selecteer ik alle inputs vanuit de html, per input pak ik de value en de name atribuut en zetten ze in de localstorage. Daarna haal ik alle waarde vanuit de localstorage met de `.getItem() `methode.
 
 
 ## Wat zou gebeuren met het data als javascript uit staat?
-Wanneer javascript uitstaat, kunnen we geen localstorage gebruiken want het is WEB API. Dus wat we kunnen doen is een server-side component en database toevoegen. Voor dit prject heb ik geen backend toegevoegd, ik ga alleen opschrijven de server zou moeten doen. Dus Als de gebruiker het formulier invult, wordt de data opgeslagen in de database met behulp van Node.js. Node.js is een onafhankelijk server omgeving. Het gebruikt server-side javascript.
+Wanneer javascript uitstaat, kunnen we geen localstorage gebruiken want het is een ] WEB API. Dus wat we kunnen doen is een server-side component en database toevoegen. Voor dit project heb ik geen backend toegevoegd, ik ga alleen opschrijven hoe de server zou moeten werken. Dus als de gebruiker het formulier invult, wordt de data opgeslagen in de database met behulp van Node.js. Node.js is een onafhankelijk server omgeving. Het gebruikt server-side javascript.
 
 Ten eerste moet je node en npm intalleren. Maar we gaan ervan uit dat die geinstalleerd zijn. Als die geinstalleerd moet je eerst een server maken. 
 
@@ -285,7 +285,7 @@ Ten eerste moet je node en npm intalleren. Maar we gaan ervan uit dat die geinst
 
 
 ### Data opslaan in de server
-Je heb alles geïnstalleerd en heeft een server. Hoe verder. Voor het formulier op de HTML Pagina moet een `POST` method toevoegen zodat die data verstuurd kan worder naar de server. In de server maak je een get request functies met de `body-parser` functionaliteit. Dus de informatie die de gebruiker had ingevuld wordt verstuurd in de MongoDB Database naar een URL route/endpoint. Door de body-parser wordt de informatie opgeslagen in `JSON` formaat. 
+Je heb alles geïnstalleerd en heeft een server. Hoe verder. Voor het formulier op de HTML Pagina moet een `POST` methode toevoegen zodat die data verstuurd kan worder naar de server. In de server maak je een get request functies met de `body-parser` functionaliteit. Dus de informatie die de gebruiker had ingevuld wordt verstuurd in de MongoDB Database naar een URL route/endpoint. Door de body-parser wordt de informatie opgeslagen in een `JSON` formaat. 
 
 
 ### Data in het formulier laten staan 
@@ -308,8 +308,6 @@ In de server zou ik een POST route toevoegen die naar de `/formulier-bevestiging
 
 
 ```
-
-
 
 ```javascript
 // app.js
@@ -336,9 +334,9 @@ In de server zou ik een POST route toevoegen die naar de `/formulier-bevestiging
 <body>
 
     <main>
-        <h1>Bedank voor het invullen van deze enquête!</h1>
+        <h1>Bedankt voor het invullen van deze enquête!</h1>
+        <p>Wij hebben jouw antwoord goed ontvangen.</p>
     </main>
-    
 </body>
 </html>
 ```
@@ -348,7 +346,7 @@ In de server zou ik een POST route toevoegen die naar de `/formulier-bevestiging
 ---
 
 ## 4. Duidelijk aangeven waar je naar de vorige vragen kan gaan of vraag kan skippen
-In mijn prototype is het mogelijk om naar de vorige of volgende vak te gaan. Er zijn twee manieren. Je kan onderaan bij de vorige en volgende knop naar een andere vak of onderdeel gaan. Ten tweede heb ik menu bar gemaakt waar je een lijst met links krijgt waar je een vak kan kiezen.
+In mijn prototype is het mogelijk om naar de vorige of volgende vak te gaan. Er zijn twee manieren. Je kan onderaan bij de vorige en volgende knop naar een andere vak of onderdeel gaan. Ten tweede heb ik een menu bar gemaakt waar je een lijst met links krijgt waar je een vak kan kiezen.
 En dus je kan ze ook overslaan als je niet wil invullen.
 
 ![Navigatie](./images/progressbar.png)
@@ -361,17 +359,16 @@ Ik heb een class toegevoegd waar je een andere opmaak kan geven terwijl je op de
 
 ## 5. Geen zichtbare radio buttons
 ![radio Buttons](./images/form-per-vak.png)
-In het enquête moet je per vak de lesstof,uitleg en eigen inzicht beoordelen van een schaal van 1 tot 10. Bij semantische HTML, moet je radio Buttons gebruiken. Maar Als je css toevoegd moet de standaard vorm van radio buttons weg. 
+In het enquête moet je per vak de lesstof, uitleg en eigen inzicht beoordelen van een schaal van 1 tot 10. Bij semantische HTML, moet je radio Buttons gebruiken. Maar Als je css toevoegd moet de standaard vorm van radio buttons weg. 
 
 ![radiobuttons in html](./images/radio-html.png)
-Zonder css zijn alle radio buttons onder elkaar in een lijst gegroepeert  met daarbij de cijfers. Met css heb ik de radio buttons onzichtbaar gemaakt met `appearance: none;` en `opacity: 0;`. Verder heb ik de lijst bullet points weggehaald en `display: flex;` om de radio buttons naast elkaar te plaatsen. 
+Zonder css zijn alle radio buttons onder elkaar in een lijst gegroepeerd  met daarbij de cijfers. Met css heb ik de radio buttons onzichtbaar gemaakt met `appearance: none;` en `opacity: 0;`. Verder heb ik de lijst bullet points weggehaald en `display: flex;` om de radio buttons naast elkaar te plaatsen. 
 
 ```css
 input[type="radio"] {
     position: absolute;
     appearance: none;
     opacity: 0;
-    /* left: -1000em; */
 
 }
 
@@ -380,7 +377,7 @@ input[type="radio"] {
 ---
 
 ## 6. Het formulier moet dark mode en light mode hebben
-De laatste criteria voor de formulier is dat het formulier moet een dark en licht versie bevatten. Hier is ook sprake van progressive enhancement. In de html heb je de mogelijkheid om de modus te zetten in de meta tag. De `<meta name="color-scheme" content="light dark">` plaats je bovenaan in de head element. Dan genereer de browser de standard versie van dark mode voor je. Hieronder zie je een voorbeeld.
+De laatste criteria voor de formulier is dat het formulier moet een donker en lichte versie hebben. Hier is ook sprake van progressive enhancement. In de html heb je de mogelijkheid om de modus te zetten in de meta tag. De `<meta name="color-scheme" content="light dark">` plaats je bovenaan in de head element. Dan genereer de browser de standard versie van dark mode voor je. Hieronder zie je een voorbeeld.
 
 
 ### In HTML 
@@ -388,7 +385,7 @@ De laatste criteria voor de formulier is dat het formulier moet een dark en lich
 ![darkmode](./images/html-dark.png)
 
 
-Om de default mooier te maken heb ik de @media features van css gebruikt. Voor de Cs heb ik  verschllende custom properties voor de kleurpalete gemaakt in mijn `:root`. De custom propertie zijn handig want dan moet ik een keer de kleur of waarde aanpassen en die wordt overal aangepast. Innmijn root heb ik mijn standaard kleurpalette gemaakt voor de lightmode. Voor de dark mode heb ik media queries `prefers-color-scheme: dark` gebruikt. Dezelfde custom properties in mijn normale root heb ik in de media queries geplaats, maar alleen de kleurcodes heb ik verandert. Dus een soort een tegenovergestelde kleurpalette. 
+Om de default mooier te maken heb ik de @media features van css gebruikt. Voor de Css heb ik  verschllende custom properties voor de kleurpallete gemaakt in mijn `:root`. De custom properties zijn handig want dan moet ik een keer de kleur of waarde aanpassen en die wordt overal aangepast. In nmijn root heb ik mijn standaard kleurpalette gemaakt voor de lightmode. Voor de dark mode heb ik media queries `prefers-color-scheme: dark` gebruikt. Dezelfde custom properties in mijn normale root heb ik in de media queries geplaats, maar alleen de kleurcodes heb ik verandert. Dus een soort een tegenovergestelde kleurpalette. 
 
 ```css
 
@@ -475,7 +472,7 @@ Om de default mooier te maken heb ik de @media features van css gebruikt. Voor d
 - Positionering
 - Fonts
 - Form Validatie
-- 
+
 
 ---
 # Testen
@@ -508,11 +505,11 @@ Dingen die **wel** mogelijk zijn:
 
 
 ### Javascript uitzetten
-De browser bestaat op een groot gedeelte uit javascript. Javascript zorgt ervoor dat je website veel interactiever en dynamisch wordt. Maar er is een groep waar sommige browser geen javascript ondersteund bijvoorbeeld lynx of mensen die standaard javascript uit hebben of mensen met apparaten die niet zo goed kan functioneren met javascript. Hoe kunnen groepen het Enquete invullen zonder javascript. 
+De browser bestaat op een groot gedeelte uit javascript. Javascript zorgt ervoor dat je website veel interactiever en dynamisch wordt. Maar er zijn situaties waar sommige browser geen javascript ondersteund bijvoorbeeld lynx of mensen die standaard javascript uit hebben of mensen met apparaten die niet zo goed kan functioneren met javascript. Hoe kunnen groepen het Enquete invullen zonder javascript. 
 
 Wat is **niet** mogelijk als javascript uitstaat:
 - Data wordt niet opgeslagen in de localstorage van de browser
-- Geen Javascript formulier validatie met 
+- Geen Javascript formulier validatie 
 - Mijn textarea geeft geen feedback als de gebruiker iets intoets. 
 
 
@@ -523,6 +520,7 @@ Voor de formulier validatie maak ik geen zorgen want de browser zelf heeft een f
 ### Slechte internet verbinding
 Een andere scenario die ik heb over nagedacht is een gebruiker die het formulier wil invullen en maar in de trein zit bijvoorbeeld en heel trage internetverbinding heeft. Wat dan? Om dit te testen heb ik in mijn netwerk tab in de developer tool, het netwerk op slow 3g geplaatst. Wat opvallend is dat het duurt langer om naar de volgende pagina te gaan. In firefox als ik de netwerk op het laagste optie zet, dus de gprs dan duurt het langer om het css te laden.  Dus misschien krijgt de gebruiker dan eerst een puur html pagina zonder opmaak te zien. Maar ze kunnen het formulier invullen. Wat ik heb gemerkt bij slechte internet verbinding is dat de custom fonts later word geladen, dus de gebruiker ziet de fallback fonts Arial die ik heb toegevoegd in de css bestand.
 
+![slow internet](images/slow-3g.png)
 
 ### Een Oplossing
 En mogelijke oplossing voor dit probleem zou zijn is het formulier progressive web app maken. Met daarbij een service worker en manifest.json bestand. En alsnog de data kun invullen en in de browser cachen. Maar dit is meestal iets dat je niet kan controleren.
@@ -569,7 +567,7 @@ Ik heb achter de custom-fonts, verschillende fallback font toegevoegd, in geval 
 Niet iedereen kan kleur zien zoals iedereen. Dit fenomeen heet kleurenblindheid. Wanneer je een website ontwerp moet je rekening houden met mensen die kleurenblind zijn.
 
 Ik moet rekening houden met:
-1. Niet volledig afhanelijk zijn met kleur. In het normale situatie als je iets verkeerd in het formulier invult, dan zie je een rode rand. Maar voor mensen die niet rood kunnen zien, weten niet dat ze iets fout had  ingevuld. Dus het beste praktijk om een foutmelding an te geven met duidleijk oplossing. 
+1. Niet volledig afhanelijk zijn met kleur. In het normale situatie als je iets verkeerd in het formulier invult, dan zie je een rode rand. Maar voor mensen die niet rood kunnen zien, weten niet dat ze iets fout had  ingevuld. Dus het beste praktijk om een foutmelding aan te geven met duidleijk oplossing. 
 2. Genoeg contrast hebben tussen de componenten.
 
 ### Hoe kan ik de kleurcontrast testen?
@@ -607,6 +605,10 @@ De interactieve elementen zijn:
 - `<a href="#">`
 - `<button>`
 
+#### Wat nog niet helemaal werkt
+- Ik kan niet de op de radio button focussen als je tab.
+- Kan geen in tabindex toevoegen
+- Met tabindex kan je niet vanuit de optie van de radio buttons groep kiezen
 ```css
 
 input[type="text"]:focus,
@@ -623,7 +625,7 @@ textarea:focus {
 
 
 ### Screenreader test
-De laatste test die ik heb gedaan is de screenreader test. Zo'n test is belangrijk hiermee, weet je zeker dat je semantische html had geschreven. Verder maak ik het enquete toegankelijk voor slechtzienden, mensen die blind zijn maar ook mensen die tijdelijk niet aan de scherm kan kijken.
+De laatste test die ik heb gedaan is de screenreader test. Zo'n test is belangrijk hiermee, weet je zeker dat je semantische html had geschreven. Verder maak ik het enquête toegankelijk voor slechtzienden, mensen die blind zijn maar ook mensen die tijdelijk niet aan de scherm kan kijken.
 
 Om de test te doen heb ik Narrator aangezet. Narrator is de screenreader van windows. Het was te vinden in mijn accessibility instellingen.
 
@@ -631,7 +633,7 @@ Om de test te doen heb ik Narrator aangezet. Narrator is de screenreader van win
 #### Studentgegevens
 - Het leest de lijst met links en zegt daar achter waar op de lijst ze staan.
 - Het studentgegevens formulier wordt te snel gelezen. Soms hoor je de feedback 'lekker bezig' ook. 
-- De screen reader benoemt welke input veld required is. 
+- De screen reader benoemt welke input veld required/verplicht is. 
 - De screenreader voorleest het hele formulier en ook de placeholder in, terwijl de gebruiker al data daar hebben staan
 
 #### Vak formulier
@@ -647,11 +649,12 @@ Om de test te doen heb ik Narrator aangezet. Narrator is de screenreader van win
 
 ### Fouten om te voorkomen
 - Ervoor zorgen dat alle radio buttons die bij elkaar horen dezelfde name atribuut hebben. Anders beschouwt de screenreader die als een aparte component. 
-- Eerst werd de required twee keer gelezen. Want ik had ook aria required en de required atribuut naast elkaar dus als je alleen het atribuut houdt, dan is het genoeg.
+- Eerst werd de required twee keer gelezen. Want ik had ook aria-required en de required atribuut naast elkaar dus als je alleen het required atribuut houdt, dan is het genoeg.
 - Ik heb de studentgegvens onderdeel asteriks, maar die wordt ook door de screenreader voorgelezen. 
 ---
 ## Browsers
-Als onderdeel van dit project moest ik mijn prototype op verschillende browser testen. Browser die ik heb gebruikt zijn, chrome, safari, Samsung Internet, Safari IOS en firefox. De bedoeling hiervoor is dat sommige browser zijn en niet alle functionaliteiten ondersteunen. En het criteria is dat het formulier zo goed moeglijk werkt. 
+Als onderdeel van dit project moest ik mijn prototype op verschillende browser testen. Browsers die ik heb gebruikt zijn, chrome, safari, Samsung Internet, Safari IOS en firefox. De bedoeling hiervoor is dat sommige browser niet alle functionaliteiten ondersteunen. En het criteria is dat het formulier zo goed moeglijk werkt. 
+
 ## Chrome
 Chrome is mijn meest gebruikte test website alles wat ik wil bereiken mt dit project wordt ondersteund. Er was niks aan te merken waarvan ik een oplossing moest bedenken. 
 ![op chrome](images/form-per-vak.png)
@@ -681,7 +684,7 @@ Het volgende browser waar ik heb getest is op Safari. Safari is een browser voor
 - De focus state outline stijl klopt niet helemaal. Ik heb de dashed optie gebruikt dus het moet wel komen te staan
 
 ## Firefox
-Het volgende browser waarmee ik heb getest is de Microsoft Firefox. In de browser moets ik wel een beetje nadenken over hoe ik bepaalde dingen met css ging doen in plaats van javascript. Want sommige css properties worden niet ondersteund.
+Het volgende browser waarmee ik heb getest is de Microsoft Firefox. In de browser moest ik wel een beetje nadenken over hoe ik bepaalde dingen met css ging doen in plaats van javascript. Want sommige css properties worden niet ondersteund.
 
 ![firefox](/images/firefox.png)
 ![firefox](/images/valid-firefox.png)
@@ -746,7 +749,7 @@ prince: style.css: warning: unsupported properties: gap, place-items
 
 ```
 
-Vervolgens krijg te zien welke css properties niet ondersteund wordt:
+Vervolgens krijg je te zien welke css properties niet ondersteund wordt:
 - Ik moest eerst de path van mijn css en javascript een beetje aanpassen want anders doet het niet goed. Ik had mijn script en sheets in een bestand
 - PrinceXML ondersteund niet de `prefers-color-scheme` media feature dus het formulier is alleen te zien in lightmode. Op zich is dat niet erg want je kan nog steeds het formulier invullen.
 - Door de grootte van het A4, kan je de menu niet zien om het progress te zien. Anders moet ik bij de media queries een beetje aanpassen.
@@ -756,13 +759,14 @@ Vervolgens krijg te zien welke css properties niet ondersteund wordt:
 - Grid properties  zoals gap en place-items worden niet ondersteund door princeXML. 
 - Links gaat naar de juiste pagina, maar open alleen in de browser.
 
-
+![test2.2](/images/test-2.2.png)
+![test2.2](/images/test-2.3.png)
 ---
 # De lagen in een notendop
-Uiteindelijk heb ik mijn formulier gemaakt van de browser technologieen en functionaliteiten. De core functionaliteiten van het formulier waren dat de gebruiker hun informatie in het formulier kunnen invullen en versturen, maar ook moet  de gebruiker weten wat hij fout en goed heeft ingevuld dus  vorm validatie en feedback. Al deze functionaliteiten heb ik in drie verschillende lagen gemaakt. 
+Uiteindelijk heb ik mijn formulier gemaakt met de browser technologieën en functionaliteiten. De core functionaliteiten van het formulier waren dat de gebruiker hun informatie in het formulier kunnen invullen en versturen, maar ook moet  de gebruiker weten wat hij fout en goed heeft ingevuld dus  vorm validatie en feedback. Al deze functionaliteiten heb ik in drie verschillende lagen gemaakt. 
 
 ## Functionele laag
-In de functionele laag heb je semantische HTML structuur. Voor een formulier moet je de `form` tag gebruiken. Om gegevens in te vullen gebruik je de `input` element. Elke onderdelen van het formulier die iets met elkaar te maken hebben gaat in een `fieldset`.  
+In de functionele laag heb je de semantische HTML structuur. Voor een formulier moet je de `form` tag gebruiken. Om gegevens in te vullen gebruik je de `input` element. Elke onderdelen van het formulier die iets met elkaar te maken hebben gaat in een `fieldset`.  
 
 In de functionele laag kun je alsnog  het formulier valideren. Met formulier validatie zorg je ervoor  dat de gebruiker de juiste gegevens invullen. In de HTML moet je de juiste input types gebruiken. In mij geval heb ik de input type email gebruikt waar gebruikers hun email moet invullen. Waar getallen ingevuld moet worden gebruik ik input type num of tel. En zo blijft het. Het gevolg zijn dat bij mobiel de juiste toetsenbord naar voren komt, maar ook wordt het duidelijker voor mensen die een screenreader gebruiken. 
 
@@ -776,13 +780,13 @@ In de functionele laag kun je alsnog  het formulier valideren. Met formulier val
 - Kan het formulier in het donker of licht modus zien. `<meta>`
 
 ## Usuable laag 
-In de usuable laag heb ik nagedacht over de designspatterns die ik gebruikt. Bij formulier moet de labels onder elkaar komen te staan anders moet je veel met je ogen scannen. Vervolgens heb ik rekening gehouden met constentie, bijvoorbeeld alle buttons hebben dezelfde vorm en kleur, input velden hebben dezelfde kleur. Alle pagina's zijn  het zelfde. 
+In de usuable laag heb ik nagedacht over de ontwerppatronen die ik gebruikt. Bij formulier moet de labels onder elkaar komen te staan anders moet je veel met je ogen scannen. Vervolgens heb ik rekening gehouden met consistentie, bijvoorbeeld alle buttons hebben dezelfde vorm en kleur, input velden hebben dezelfde kleur. Alle pagina's zijn  het zelfde enz. 
 
 In de ze laag kwam een progressive enhancement, de opmaak. Van een normale html pagina naar een mooie opgemaakte pagina's. 
 
 ### Gedaan in deze laag
 - Kleur toegevoegd met aparte kleur voor donkere en licht modus
-- Custom fonts toegevoegd
+- Custom fonts toegevoegd boven het systeem fonts
 - Onzichtbare radio buttons 
 - Andere focus, hover state
 - CSS vorm validatie met `:valid` en `:invalid` psuedo classes
