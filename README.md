@@ -645,7 +645,8 @@ Om de test te doen heb ik Narrator aangezet. Narrator is de screenreader van win
 
 ### Fouten om te voorkomen
 - Ervoor zorgen dat alle radio buttons die bij elkaar horen dezelfde name atribuut hebben. Anders beschouwt de screenreader die als een aparte component. 
-- Eerst werd de required twee keer gelezen. Want ik had ook aria required en de required atribuut naast elkaar dus als je alleen het atribuut houdt, dan is het genoeg
+- Eerst werd de required twee keer gelezen. Want ik had ook aria required en de required atribuut naast elkaar dus als je alleen het atribuut houdt, dan is het genoeg.
+- Ik heb de studentgegvens onderdeel asteriks, maar die wordt ook door de screenreader voorgelezen. 
 ---
 ## Browsers
 Als onderdeel van dit project moest ik mijn prototype op verschillende browser testen. Browser die ik heb gebruikt zijn, chrome, safari, Samsung Internet, Safari IOS en firefox. De bedoeling hiervoor is dat sommige browser zijn en niet alle functionaliteiten ondersteunen. En het criteria is dat het formulier zo goed moeglijk werkt. 
@@ -675,7 +676,7 @@ Het volgende browser waar ik heb getest is op Safari. Safari is een browser voor
 - Safari kan ondersteund de appearance property niet dus toe ik hem opende kon ik nog steeds de radio buttons zien, dus in mijn css heb ik ook opacity 0 gegeven aan de radio buttons
 - Donker modus en licht modus werkt prima 
 -  Data wordt opgeslagen in local storage
-
+- De focus state outline stijl klopt niet helemaal. Ik heb de dashed optie gebruikt dus het moet wel komen te staan
 
 ## Firefox
 Het volgende browser waarmee ik heb getest is de Microsoft Firefox. In de browser moets ik wel een beetje nadenken over hoe ik bepaalde dingen met css ging doen in plaats van javascript. Want sommige css properties worden niet ondersteund.
