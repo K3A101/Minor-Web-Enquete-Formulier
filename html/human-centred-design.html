@@ -14,169 +14,198 @@
 
     <!-- Interstate -->
     <link rel="stylesheet" href="https://use.typekit.net/pxn6jyw.css">
-    <!-- <meta name="color-scheme" content="light dark"> -->
-    <title>Enquete voor minor</title>
+    <meta name="color-scheme" content="light dark">
+    <title>Enquête voor Minor Web</title>
+    <script src="../scripts/script.js" defer></script>
 </head>
 
 <body>
     <header>
+        <label id="menu" for="show">Menu</label>
+        <input type="checkbox" name="showMenu" id="show">
         <nav>
             <ol>
-                <li>Intro</li>
-                <li>Vak 1</li>
-                <li>Vak 2</li>
-                <li>Vak 3</li>
-                <li>Vak 4</li>
-                <li>Vak 5</li>
-                <li>Vak 6</li>
-                <li>Vak 7</li>
-                <li>Vak 8</li>
+                <li><a class="current-page" href="../index.html">Home</a></li>
+                <li><a class="current-page" href="./web-app-from-scratch.html">Vak 1</a></li>
+                <li><a class="current-page" href="./css-to-rescue.html">Vak 2</a></li>
+                <li><a class="current-page" href="./progressive-web-app.html">Vak 3</a></li>
+                <li><a class="current-page" href="./browser-technologies.html">Vak 4</a></li>
+                <li><a class="current-page" href="./real-time-web.html">Vak 5</a></li>
+                <li><a class="current-page" href="./human-centred-design.html">Vak 6</a></li>
+                <li><a href="./meesterproef.html">Vak 7</a></li>
+                <li><a href="./weekly-nerd.html">Vak 8</a></li>
             </ol>
         </nav>
 
     </header>
     <main>
-        <h1>Enquete voor Minor Web</h1>
+        <h1>Enquête voor Minor Web</h1>
 
-        <form>
-                <!-- Human centred Design -->
+        <form action="./meesterproef.html">
+            <!-- human-centred-design -->
+            <fieldset>
+                <section>
+                    <h2>Vak 6: Human Centred Design </h2>
+                    <p>De twee docenten van Human Centred Design waren <b>Eric Groot Kormelink</b> en <b>Koop Reynders</b>
+                    </p>
+
+
+                </section>
+                <legend>Geef je mening voor Human Centred Design</legend>
+                <!-- Algemene mening-->
+
                 <fieldset>
-                    <h2>Vak 6</h2>
-                    <legend> Geef je mening op het vak Human Centred Design </legend>
-                    <h2>Human Centred Design</h2>
-                    <p>De twee docenten voor Real-time Web waren <b>Eric Groot Kormelink</b> en <b> Koop Reynders</b></p>
-                
-                    <p>Geef je mening voor Human Centred Design</p>
-                    <!-- Algemene mening-->
-                
-                    <fieldset>
-                        <label for="hcd-beoordeling">Welke cijfer zou je deze vak geven?</label><br>
-                        <select name="hcd-beoordeling" id="hcd-beoordeling">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                        <br>
-                        <fieldset>
-                
-                            <legend>In welke week heb je deze vak gedaan?</legend>
-                            <label><input type="week" name="hcd-eerste-week"></label>
-                            <label><input type="week" name="hcd-laatste-week"></label>
-                        </fieldset>
-                
-                
-                
-                        <label for="hcd-algemene-mening">Wat vond van je van het vak? En wat kan beter?</label><br>
-                        <textarea name="hcd-lesstof" id="hcd-algemene mening" cols="80" rows="5"
-                            placeholder="Schrijft je mening.."></textarea>
-                    </fieldset>
-                
-                
-                    <!-- leesstof -->
-                    <fieldset>
-                        <h2>Lesstof van Human Centred Design</h2>
-                
-                
-                        <!-- groepeer de radio buttons op basis van schaal van 1 tot 10-->
-                        <fieldset>
-                            <legend>Welke cijfer zou je geven aan de lesstof? Geef een cijfer tussen 1 tot en met 10
-                            </legend>
-                            <ul>
-                                <li>
-                                    <label>
-                                        <input type="radio" name="hcd-lesstof-beoordeling">
-                                        1
-                                    </label>
-                                </li>
-                                <li><label><input type="radio" name="hcd-lesstof-beoordeling">2</label></li>
-                                <li><label><input type="radio" name="hcd-lesstof-beoordeling">3</label></li>
-                                <li><label><input type="radio" name="hcd-lesstof-beoordeling">4</label></li>
-                                <li><label><input type="radio" name="hcd-lesstof-beoordeling">5</label></li>
-                                <li><label><input type="radio" name="hcd-lesstof-beoordeling">6</label></li>
-                                <li><label><input type="radio" name="hcd-lesstof-beoordeling">7</label></li>
-                                <li><label><input type="radio" name="hcd-lesstof-beoordeling">8</label></li>
-                                <li><label><input type="radio" name="hcd-lesstof-beoordeling">9</label></li>
-                                <li><label><input type="radio" name="hcd-lesstof-beoordeling">10</label></li>
-                            </ul>
-                        </fieldset>
-                
-                        <fieldset>
-                            <legend>1. Was de lesstof van Human Centred Design makkelijk om te volgen? </legend>
-                            <ul>
-                                <li><label> <input type="radio" name="hcd-moeilijkheid" value="Zeer moeilijk">Zeer
-                                        moeilijk</label></li>
-                                <li><label><input type="radio" name="hcd-moeilijkheid" value=" Moeilijk">Moeilijk</label>
-                                </li>
-                                <li><label><input type="radio" name="hcd-moeilijkheid" value="Neutraal">Neutraal</label>
-                                </li>
-                                <li><label><input type="radio" name="hcd-moeilijkheid" value="Makkelijk">Makkelijk</label>
-                                </li>
-                                <li><label><input type="radio" name="hcd-moeilijkheid" value="Zeer makkelijk">Zeer
-                                        makkelijk</label></li>
-                            </ul>
-                
-                        </fieldset>
-                
-                    </fieldset>
-                
-                    <!-- Uitleg -->
-                    <fieldset>
-                        <h2>Uitleg van Human Centred Design</h2>
-                        <fieldset>
-                            <legend>De uitleg van de docenten was heel duidelijk </legend>
-                            <ul>
-                                <li><label> <input type="radio" name="hcd-uitleg-duidelijkheid" value="Zeer oneens">Zeer
-                                        Oneens</label>
-                                </li>
-                                <li><label><input type="radio" name="hcd-uitleg-duidelijkheid" value="Oneens">Oneens</label>
-                                </li>
-                                <li><label><input type="radio" name="hcd-uitleg-duidelijkheid" value="Neutraal">Neutraal</label></li>
-                                <li><label><input type="radio" name="hcd-uitleg-duidelijkheid" value="Eens">Eens</label>
-                                </li>
-                                <li><label><input type="radio" name="hcd-uitleg-duidelijkheid" value="Zeer eens">Zeer
-                                        eens</label></li>
-                            </ul>
-                
-                        </fieldset>
-                
-                        <fieldset>
-                            <legend>Welke cijfer zou je geven aan de uitleg? Geef een cijfer tussen 1 tot en met 10
-                            </legend>
-                            <ul>
-                                <li>
-                                    <label>
-                                        <input type="radio" name="hcd-uitleg-beoordeling" value="1" id="1">
-                                        1
-                                    </label>
-                                </li>
-                                <li><label><input type="radio" name="hcd-uitleg-beoordeling" value="2">2</label></li>
-                                <li><label><input type="radio" name="hcd-uitleg-beoordeling" value="3">3</label></li>
-                                <li><label><input type="radio" name="hcd-uitleg-beoordeling" value="4">4</label></li>
-                                <li><label><input type="radio" name="hcd-uitleg-beoordeling" value="5">5</label></li>
-                                <li><label><input type="radio" name="hcd-uitleg-beoordeling" value="6">6</label></li>
-                                <li><label><input type="radio" name="hcd-uitleg-beoordeling" value="7">7</label></li>
-                                <li><label><input type="radio" name="hcd-uitleg-beoordeling" value="8">8</label></li>
-                                <li><label><input type="radio" name="hcd-uitleg-beoordeling" value="9">9</label></li>
-                                <li><label><input type="radio" name="hcd-uitleg-beoordeling" value="10">10</label></li>
-                            </ul>
-                        </fieldset>
-                    </fieldset>
+                    <label for="human-centred-design-beoordeling">1. Welke cijfer zou je dit vak geven?</label><br>
+                    <input type="text" inputmode="numeric" name="human-centred-design-beoordeling" id="human-centred-design-beoordeling">
+                    <br>
 
-                    <ul>
-                        <li><a href="./real-time-web.html">Vorige</a></li>
-                        <li><button class="opslaan" type="submit">Gegevens Opslaan</button></li>
-                        <li><a href="./meesterproef.html">Volgende</a></li>
-                    </ul>
-                
+
+
+                    <label for="human-centred-design-algemene-mening">2. Wat vond je van het vak? En wat kan beter?</label><br>
+                    <textarea name="human-centred-design-lesstof" class="mening" id="human-centred-design-algemene-mening" cols="80"
+                        rows="5" placeholder="Schrijft je mening.." value=""></textarea>
                 </fieldset>
 
+
+                <!-- leesstof -->
+                <fieldset>
+                    <legend>Beoordeling</legend>
+                    <h3>Lesstof van Human Centred Design</h3>
+
+
+                    <!-- groepeer de radio buttons op basis van schaal van 1 tot 10-->
+                    <fieldset>
+
+                        <p tabindex="0">3. Was de uitleg makkelijk? Welke cijfer zou je geven aan de lesstof? Hoe hoger
+                            de cijfer, hoe makkelijk.</p>
+                        <ul>
+                            <li><label><input type="radio" name="human-centred-design-lesstof-beoordeling"
+                                        value="1"><span>1</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-lesstof-beoordeling"
+                                        value="2"><span>2</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-lesstof-beoordeling"
+                                        value="3"><span>3</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-lesstof-beoordeling"
+                                        value="4"><span>4</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-lesstof-beoordeling"
+                                        value="5"><span>5</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-lesstof-beoordeling"
+                                        value="6"><span>6</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-lesstof-beoordeling"
+                                        value="7"><span>7</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-lesstof-beoordeling"
+                                        value="8"><span>8</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-lesstof-beoordeling"
+                                        value="9"><span>9</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-lesstof-beoordeling"
+                                        value="10"><span>10</span></label></li>
+                        </ul>
+                        <div class="results1"></div>
+                    </fieldset>
+
+
+
+                </fieldset>
+
+                <!-- Uitleg -->
+                <fieldset>
+                    <h3>Uitleg van Human Centred Design.</h3>
+
+
+                    <fieldset>
+                        <p tabindex="0">4. Hoe makkelijk vond je de uitleg? Hoe hoger het getal hoe
+                            makkelijker.
+                        </p>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input required type="radio" name="human-centred-design-uitleg-beoordeling" value="1" id="1">
+                                    <span>1</span>
+                                </label>
+                            </li>
+                            <li><label><input type="radio" name="human-centred-design-uitleg-beoordeling"
+                                        value="2"><span>2</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-uitleg-beoordeling"
+                                        value="3"><span>3</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-uitleg-beoordeling"
+                                        value="4"><span>4</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-uitleg-beoordeling"
+                                        value="5"><span>5</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-uitleg-beoordeling"
+                                        value="6"><span>6</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-uitleg-beoordeling"
+                                        value="7"><span>7</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-uitleg-beoordeling"
+                                        value="8"><span>8</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-uitleg-beoordeling"
+                                        value="9"><span>9</span></label></li>
+                            <li><label><input type="radio" name="human-centred-design-uitleg-beoordeling"
+                                        value="10"><span>10</span></label></li>
+                        </ul>
+                        <div class="results2"></div>
+                    </fieldset>
+                </fieldset>
+
+
+                <fieldset>
+                    <fieldset>
+                        <h3>Eigen inzicht op Human Centred Design.</h3>
+
+                        <fieldset>
+                            <p tabindex="0">
+                                5. Hoe goed kon je het vak Human Centred Design begrijpen? Hoe hoger de cijfer, hoe
+                                beter.
+                            </p>
+                            <ul>
+                                <li>
+                                    <label>
+                                        <input required type="radio" name="human-centred-design-eigen-inzicht" value="1" id="1">
+                                        <span>1</span>
+                                    </label>
+                                </li>
+                                <li><label><input type="radio" name="human-centred-design-eigen-inzicht"
+                                            value="2"><span>2</span></label>
+                                </li>
+                                <li><label><input type="radio" name="human-centred-design-eigen-inzicht"
+                                            value="3"><span>3</span></label>
+                                </li>
+                                <li><label><input type="radio" name="human-centred-design-eigen-inzicht"
+                                            value="4"><span>4</span></label>
+                                </li>
+                                <li><label><input type="radio" name="human-centred-design-eigen-inzicht"
+                                            value="5"><span>5</span></label>
+                                </li>
+                                <li><label><input type="radio" name="human-centred-design-eigen-inzicht"
+                                            value="6"><span>6</span></label>
+                                </li>
+                                <li><label><input type="radio" name="human-centred-design-eigen-inzicht"
+                                            value="7"><span>7</span></label>
+                                </li>
+                                <li><label><input type="radio" name="human-centred-design-eigen-inzicht"
+                                            value="8"><span>8</span></label>
+                                </li>
+                                <li><label><input type="radio" name="human-centred-design-eigen-inzicht"
+                                            value="9"><span>9</span></label>
+                                </li>
+                                <li><label><input type="radio" name="human-centred-design-eigen-inzicht"
+                                            value="10"><span>10</span></label></li>
+                            </ul>
+                            <div class="results3"></div>
+                        </fieldset>
+                    </fieldset>
+
+                </fieldset>
+
+
+
+            </fieldset>
+
+
+            <ul>
+                <li><a class="vorige-btn" href="../html/real-time-web.html">Vorige</a></li>
+                <li><button class="Volgende" type="submit">Volgende</button></li>
+
+            </ul>
 
         </form>
     </main>
