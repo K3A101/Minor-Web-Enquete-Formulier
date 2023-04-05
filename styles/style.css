@@ -21,7 +21,6 @@
 
     --button-kleur: #370152;
     --tekst-kleur: #261e29;
-    /* --legend-kleur:  */
 
     /* Form validatie */
     --valid-form-data-kleur: mediumseagreen;
@@ -37,7 +36,6 @@
     --button-andere-state-achtergrond: #df9ff9;
     --button-andere-state-tekst: #370152;
 }
-
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
@@ -73,8 +71,6 @@
         --niet-current-link: #df9ff991;
         --current-link: #df9ff9;
     }
-
-
 }
 
 
@@ -87,17 +83,11 @@ li {
     list-style: none;
 }
 
-/* input[type="radio"] {
-    appearance: none;
-} */
-
 body {
     background-color: var(--achtergrond-kleur);
-    /* background-color: #f1e9f4; */
     font-family: var(--paragraaf);
     font-weight: 400;
     margin: 1em;
-
 }
 
 body > p {
@@ -130,7 +120,6 @@ h3 {
 /* Header */
 header nav ol {
     display: flex;
-
 }
 
 fieldset {
@@ -165,7 +154,6 @@ header a:focus-within {
     border: 2px dashed var(--button-andere-state-tekst);
 }
 
-
 header a.current-page {
     background-color: var(--current-link);
 }
@@ -197,11 +185,9 @@ ol {
     top: 1em;
 }
 
-
 body :has(input[type="checkbox"]:checked) nav {
     top: 0;
     left: 0;
-
 }
 
 body input[type="checkbox"]:checked~nav {
@@ -209,9 +195,7 @@ body input[type="checkbox"]:checked~nav {
     left: 0;
 }
 
-
 nav {
-
     z-index: 1;
     position: absolute;
     top: -100em;
@@ -219,9 +203,6 @@ nav {
 
     background-color: var(--main-kleur);
 }
-
-
-
 
 /********/
 /* FORM */
@@ -237,9 +218,7 @@ form {
     flex-direction: column;
     background-color: var(--form-achtergrond-kleur);
     padding: .5em;
-
 }
-
 
 form>fieldset {
     display: flex;
@@ -247,7 +226,6 @@ form>fieldset {
     gap: 3em;
     margin: 2em .5em;
     padding: 1em;
-    /* background-color: var(--achtergrond-kleur); */
 }
 
 form section h2 {
@@ -273,13 +251,10 @@ textarea {
     font-family: var(--paragraaf);
 }
 
-
 textarea::placeholder{
     font-family: var(--paragraaf);
     color: var(--tekst-kleur);
 }
-
-
 
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -340,11 +315,8 @@ form>fieldset>fieldset p:focus {
 
 /* Alle radio buttons */
 form>fieldset>fieldset:nth-of-type(n+2) ul {
-
     display: flex;
-    /* flex-wrap: wrap; */
     background-color: var(--input-kleur);
-
     gap: .3em;
 }
 
@@ -355,17 +327,13 @@ form>fieldset>fieldset:nth-of-type(n+2) ul li label {
 }
 
 form>fieldset>fieldset:nth-of-type(n+2) span {
-
     padding: .5em;
-    /* width: 3em;
- height: 3em; */
 }
 
 
 /* De vragen */
 form>fieldset fieldset p,
 form>fieldset>fieldset>label {
-    /* color: var(--font-size-paragraaf); */
     margin-bottom: 1em;
 }
 
@@ -377,12 +345,9 @@ form p {
 /*******************/
 /* STUDENTGEGEVENS */
 /*******************/
-
-
 #studentgegevens fieldset {
     position: relative;
     gap: 1em;
-
 }
 
 label[for="voornaam"],
@@ -414,9 +379,6 @@ input[type="email"] {
 /* FORM VALILDATE */
 /******************/
 
-
-
-
 /* Formulier Validatie */
 input[type="text"]:valid,
 input[type="email"]:valid {
@@ -424,21 +386,11 @@ input[type="email"]:valid {
     border-bottom: 4px solid var(--valid-form-data-kleur);
 }
 
-/* input[type="text"]:valid,
-input[type="email"]:valid,
-textarea:valid {
-    border: 1px solid var(--valid-form-data-kleur);
-    border-bottom: 4px solid var(--valid-form-data-kleur);
-} */
-
 input[type="email"]:invalid,
 input[inputmode="numeric"]:invalid {
     border: 1px solid var(--invalid-form-data-kleur);
     border-bottom: 4px solid var(--invalid-form-data-kleur);
-
 }
-
-
 
 input:required {
     border: 1px solid var(--invalid-form-data-kleur);
@@ -456,7 +408,6 @@ input:required {
     right: 5em;
 }
 
-
 #studentgegevens label:has(input[type="email"]:valid)::after {
     content: 'Lekker bezig';
     color: var(--valid-form-data-kleur);
@@ -465,7 +416,6 @@ input:required {
     transform: translateY(2em);
     right: 5em;
 }
-
 
 /* Form validatie voor firefox */
 /* Foutmeldingen */
@@ -484,7 +434,6 @@ input:required {
     position: absolute;
     transform: translateY(.5em);
     font-size: 14px;
-
 }
 
 /* Voor de email */
@@ -502,7 +451,6 @@ input:required {
     position: absolute;
     transform: translateY(.5em);
     font-size: 14px;
-
 }
 
 .valid-data {
@@ -515,7 +463,6 @@ textarea.valid-data::after {
     position: absolute;
     color: var(--tekst-kleur);
     transform: translateY(2em);
-
 }
 
 .results1,
@@ -540,8 +487,6 @@ button[type="submit"] {
     background-color: var(--button-kleur-achtergrond);
     color: var(--button-kleur-tekst);
     font-family: var(--font-size-paragraaf);
-
-
 }
 
 button:hover,
