@@ -845,12 +845,27 @@ Als ik meer tijd zou hebben zou ik de volgende dingen doen:
 
 ---
 # Bronnen
-- https://dev.to/rdegges/please-stop-using-local-storage-1i04
-- https://www.quora.com/Will-node-js-work-if-JavaScript-is-disabled
-- https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073
-- https://stackoverflow.com/questions/28278630/node-js-disabling-browsers-javascript
-- https://medium.com/geekculture/how-to-send-data-from-a-form-and-receive-it-with-express-js-3c03af6275b2
-- https://expressjs.com/en/resources/middleware/session.html
-- https://programmingmentor.com/post/save-form-nodejs-mongodb/
-- https://www.makeuseof.com/session-local-storage-differences/
-- 
+- Degges, R. (2018, 30 januari). Please Stop Using Local Storage. DEV Community. https://dev.to/rdegges/please-stop-using-local-storage-1i04
+- Will node.js work if JavaScript is disabled? (z.d.). Quora. https://www.quora.com/Will-node-js-work-if-JavaScript-is-disabled
+- Bland, J. (2019, 7 mei). Using Node.js & Express.js to save data to MongoDB Database. Medium. https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073
+- Node.js - Disabling Browser’s Javascript. (z.d.). Stack Overflow. https://stackoverflow.com/questions/28278630/node-js-disabling-browsers-javascript
+- Figueroa, R. (2022, 30 maart). How to send data from a form and receive it with Express.js. Medium. https://medium.com/geekculture/how-to-send-data-from-a-form-and-receive-it-with-express-js-3c03af6275b2
+- Express session middleware. (z.d.). https://expressjs.com/en/resources/middleware/session.html
+- Koldovskyy, V. (2017, 5 mei). Save form data to MongoDB with NodeJS. programming mentor. https://programmingmentor.com/post/save-form-nodejs-mongodb/
+- Omisola, I. (2022, 9 juli). Session Storage vs. Local Storage: What Are the Differences? MUO. https://www.makeuseof.com/session-local-storage-differences/
+- Can I use. . . Support tables for HTML5, CSS3, etc. (z.d.). https://caniuse.com/
+- Prince - Try Prince. (z.d.). https://www.princexml.com/try/
+- Client-side form validation - Learn web development | MDN. (2023, 12 maart). https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#validating_forms_using_javascript
+- Change default HTML input validation message. (z.d.). Stack Overflow. https://stackoverflow.com/questions/63491564/change-default-html-input-validation-message
+- GeeksforGeeks. (2023, 15 februari). How to get value of selected radio button using JavaScript. https://www.geeksforgeeks.org/how-to-get-value-of-selected-radio-button-using-javascript/
+- A. (2021, 5 december). Get value of selected radio button with JavaScript/jQuery. Techie Delight. https://www.techiedelight.com/get-value-of-selected-radio-button-javascript/
+- HTML DOM Input Radio value Property. (z.d.). https://www.w3schools.com/jsref/prop_radio_value.asp
+- WebAIM: Keyboard Accessibility - Tabindex. (2020, 10 november). https://webaim.org/techniques/keyboard/tabindex
+- Problematic Combinations for Color Deficient Vision. (2016, 27 maart). Accessibility at Penn State. https://accessibility.psu.edu/color/colorvisiondetails/
+- Express cookie-session middleware. (z.d.). https://expressjs.com/en/resources/middleware/cookie-session.html
+- Khare, M. (2023, 9 maart). What Is Node.js and Why You Should Use It. Kinsta®. https://kinsta.com/knowledgebase/what-is-node-js/
+- Working with IndexedDB. (2016, 1 januari). web.dev. https://web.dev/indexeddb/
+- Change default HTML input validation message. (z.d.-b). Stack Overflow. https://stackoverflow.com/questions/63491564/change-default-html-input-validation-message
+- Window.localStorage - Web APIs | MDN. (2023, 16 maart). https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+- https://www.learnhowtoprogram.com/user-interfaces/advanced-css-features/viewports-and-media-queries#:~:text=Sometimes%20multiple%20media%20queries%20can,the%20maximum%20value%20of%20480.
+- Prieto, R. (2018, 24 augustus). Progressive Disclosure with CSS. Silo Creativo. https://www.silocreativo.com/en/progressive-disclosure-with-css/
