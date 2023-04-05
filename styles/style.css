@@ -225,7 +225,7 @@ form {
 }
 
 
-@media (prefer-reduced-motion) {
+@media (prefers-reduced-motion) {
     form {
         display: flex;
         flex-direction: column;
