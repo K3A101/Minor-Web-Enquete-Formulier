@@ -218,8 +218,8 @@ form {
     flex-direction: column;
     background-color: var(--form-achtergrond-kleur);
     padding: .5em;
-    animation: open-form .5s 1 linear;
-    -moz-animation: open-form .5s 1 linear;
+    animation: open-form .5s 1 linear both;
+    -moz-animation: open-form .5s 1 linear both;
     transform-origin: top;
     -moz-transform-origin: top;
 }
@@ -238,10 +238,12 @@ form {
 @keyframes open-form {
     0% {
         transform: scaleY(0);
+        opacity: 0;
     }
 
     100% {
         transform: scaleY(1);
+        opacity: 100%;
     }
 }
 
