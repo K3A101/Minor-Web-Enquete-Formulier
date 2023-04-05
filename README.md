@@ -3,32 +3,34 @@ In het vak van browser technologie ga ik een robuuste en toegankelijk website ma
 
 ---
 ## Inhoudsopgave
-- [Concept]()
-- [Functionaliteiten van het prototype]()
-- [Core functionaliteiten voor de enquête]()
-- [Criteria van de eindopdracht]()
-  - [1. Niet alle formulier velden laten zien]()
-  - [2. Formulier validatie]()
-  - [3. Data opslaan en later weer veder gaan]()
-  - [4. Duidelijk aangeven waar je naat de vorige vragen kan gaan ov vraag kan overslaan]()
-  - [5. Geen zichtbare radio buttons]()
-  - [6. Het formulier moet darkmode en light mode hebben]()
-- [Testen]()
-  - [CSS uitzetten]()
-  - [Javascript uitzetten]()
-  - [Slechte internet verbinding]()
-  - [Custom fonts uitzetten]()
-  - [Kleur]()
-  - [Muis/trackpad werkt niet]()
-  - [Screenreader test]()
-- [Browser]()
-  - [Chrome]()
-  - [Safari]()
-  - [Firefox]()
-  - [Samsung Internet]()
-  - [PrinceXML]()
-- [De lagen in een notendop]()
-- [Bronnen]()
+- [inhoudsopgave](https://github.com/K3A101/Minor-Web-Enquete-Formulier#inhoudsopgave)
+- [Concept](https://github.com/K3A101/Minor-Web-Enquete-Formulier#concept)
+- [Functionaliteiten van het prototype](https://github.com/K3A101/Minor-Web-Enquete-Formulier#functionaliteiten-van-het-prototype)
+- [Core functionaliteiten voor de enquête](https://github.com/K3A101/Minor-Web-Enquete-Formulier#core-functionaliteiten-voor-de-enqu%C3%AAte---zelf-bedacht)
+- [Criteria van de eindopdracht](https://github.com/K3A101/Minor-Web-Enquete-Formulier#criteria-voor-de-eindopdracht)
+  - [1. Niet alle formulier velden laten zien](https://github.com/K3A101/Minor-Web-Enquete-Formulier#1-niet-alle-formuliervelden-laten-zien)
+  - [2. Formulier validatie](https://github.com/K3A101/Minor-Web-Enquete-Formulier#2-formulier-validatie)
+  - [3. Data opslaan en later weer veder gaan](https://github.com/K3A101/Minor-Web-Enquete-Formulier#3-data-opslaan-en-later-weer-verder-gaan)
+  - [4. Duidelijk aangeven waar je naat de vorige vragen kan gaan ov vraag kan overslaan](https://github.com/K3A101/Minor-Web-Enquete-Formulier#4-duidelijk-aangeven-waar-je-naar-de-vorige-vragen-kan-gaan-of-vraag-kan-overslaan)
+  - [5. Geen zichtbare radio buttons](https://github.com/K3A101/Minor-Web-Enquete-Formulier#5-geen-zichtbare-radio-buttons)
+  - [6. Het formulier moet darkmode en light mode hebben](https://github.com/K3A101/Minor-Web-Enquete-Formulier#6-het-formulier-moet-dark-mode-en-light-mode-hebben)
+- [Testen](https://github.com/K3A101/Minor-Web-Enquete-Formulier#testen)
+  - [CSS uitzetten](https://github.com/K3A101/Minor-Web-Enquete-Formulier#css-uitzetten)
+  - [Javascript uitzetten](https://github.com/K3A101/Minor-Web-Enquete-Formulier#javascript-uitzetten)
+  - [Slechte internet verbinding](https://github.com/K3A101/Minor-Web-Enquete-Formulier#slechte-internet-verbinding)
+  - [Custom fonts uitzetten](https://github.com/K3A101/Minor-Web-Enquete-Formulier#custom-fonts-uitzetten)
+  - [Kleur](https://github.com/K3A101/Minor-Web-Enquete-Formulier#kleur)
+  - [Muis/trackpad werkt niet](https://github.com/K3A101/Minor-Web-Enquete-Formulier#muistrackpad-werkt-niet)
+  - [Screenreader test](https://github.com/K3A101/Minor-Web-Enquete-Formulier#screenreader-test)
+- [Browser](https://github.com/K3A101/Minor-Web-Enquete-Formulier#browsers)
+  - [Chrome](https://github.com/K3A101/Minor-Web-Enquete-Formulier#chrome)
+  - [Safari](https://github.com/K3A101/Minor-Web-Enquete-Formulier#safari)
+  - [Firefox](https://github.com/K3A101/Minor-Web-Enquete-Formulier#firefox)
+  - [Samsung Internet](https://github.com/K3A101/Minor-Web-Enquete-Formulier#samsung-internet)
+  - [PrinceXML](https://github.com/K3A101/Minor-Web-Enquete-Formulier#princexml)
+- [De lagen in een notendop](https://github.com/K3A101/Minor-Web-Enquete-Formulier#de-lagen-in-een-notendop)
+- [Wat zou ik anders doen](https://github.com/K3A101/Minor-Web-Enquete-Formulier#wat-zou-ik-anders-doen)
+- [Bronnen](https://github.com/K3A101/Minor-Web-Enquete-Formulier#bronnen)
 
 
 
@@ -327,7 +329,7 @@ Stel je voor dat gebruiker later met het enquête wil doorgaan. Hoe zou dat werk
 
 ### Wat geeft de Server weer als de gebruiker helemaal klaar is ?
 Als de gebruiker klaar is dan krijgt de gebruiker een bevestiging pagina terug.
-![Bevestiging pagina]()
+![Bevestiging pagina](/images/bevestiging-pagina.png)
 
 In de server zou ik een POST route toevoegen die naar de `/formulier-bevestiging`. En dan deze bericht terug geven aan de client: '*Bedankt voor het invullen van het enquête*'. Hier is een verkorte versie van wat ik bedoelde. 
 
@@ -767,7 +769,7 @@ Dit is mijn eerste test met princeXML. De opmaak van de enquête klopte niet hel
 
 
 ## Test 3
-![PDF](/images/test-4.png
+![PDF](/images/test-4.png)
 
 ### Wat niet wordt ondersteund 
 
