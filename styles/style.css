@@ -340,6 +340,9 @@ form>fieldset>fieldset:nth-of-type(1) input {
 /* Vraag 3, 4,5 */
 form>fieldset>fieldset p:focus {
     outline: 2px dashed var(--main-kleur);
+    outline-style: dashed;
+    outline-width: 2px;
+    outline-color: var(--main-kleur);
 }
 
 /* Alle radio buttons */
