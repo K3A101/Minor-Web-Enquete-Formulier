@@ -2,6 +2,39 @@
 In het vak van browser technologie ga ik een robuuste en toegankelijk website maken. Mijn website moet zo goed mogelijk kunnen werken op alle browser, alle schermen en in verschillende soorten contexten. Dus ik moet nadenken over responsive pagina's, goede kleurcontrasten, fallback lettertype, alt teksten bij afbeeldingen etc. Verder ga ik onderzoek doen over wat progressive enhancement is om een toegankelijk website te maken. Voor mijn eindopdracht ga ik een Enquete maken voor studenten die het  Minor web hadden gevolgd. De bedoeling is dat de studenten hun ervaring kunnen geven die ze hebben meegemaakt tijdens de Minor.
 
 ---
+## Inhoudsopgave
+- [Concept]()
+- [Functionaliteiten van het prototype]()
+- [Core functionaliteiten voor de enquête]()
+- [Criteria van de eindopdracht]()
+  - [1. Niet alle formulier velden laten zien]()
+  - [2. Formulier validatie]()
+  - [3. Data opslaan en later weer veder gaan]()
+  - [4. Duidelijk aangeven waar je naat de vorige vragen kan gaan ov vraag kan overslaan]()
+  - [5. Geen zichtbare radio buttons]()
+  - [6. Het formulier moet darkmode en light mode hebben]()
+- [Testen]()
+  - [CSS uitzetten]()
+  - [Javascript uitzetten]()
+  - [Slechte internet verbinding]()
+  - [Custom fonts uitzetten]()
+  - [Kleur]()
+  - [Muis/trackpad werkt niet]()
+  - [Screenreader test]()
+- [Browser]()
+  - [Chrome]()
+  - [Safari]()
+  - [Firefox]()
+  - [Samsung Internet]()
+  - [PrinceXML]()
+- [De lagen in een notendop]()
+- [Bronnen]()
+
+
+
+
+
+---
 
 ## Concept
 - Link naar de Demo: https://k3a101.github.io/Minor-Web-Enquete-Formulier/
@@ -345,7 +378,7 @@ In de server zou ik een POST route toevoegen die naar de `/formulier-bevestiging
 
 ---
 
-## 4. Duidelijk aangeven waar je naar de vorige vragen kan gaan of vraag kan skippen
+## 4. Duidelijk aangeven waar je naar de vorige vragen kan gaan of vraag kan overslaan
 In mijn prototype is het mogelijk om naar de vorige of volgende vak te gaan. Er zijn twee manieren. Je kan onderaan bij de vorige en volgende knop naar een andere vak of onderdeel gaan. Ten tweede heb ik een menu bar gemaakt waar je een lijst met links krijgt waar je een vak kan kiezen.
 En dus je kan ze ook overslaan als je niet wil invullen.
 
@@ -711,7 +744,7 @@ Samsung Galaxy is een browser voor Samsung apparaten. Ik beschik van een samsung
 - Data wordt opgeslagen in de local storage
 
 
-## PrinceXM
+## PrinceXML
 Als laatste moest ik een obscure browser kiezen. Ik heb gekozen om mijn prototype te testen op princeXML. PrinceXML is een browser waar je HTML pagina's en CSS kan omzetten in een PDF bestand. Ik heb de gratis versie geinstalleerd op mijn windows computer en dan met de terminal een pdf output ervan gemaakt. Op hun site hebben ze ook een generator waarvan je html pagina's en css bestanden kan ingooien. Daarna genereer de browser een pdf bestand voor je.
 
 ## Test 1
