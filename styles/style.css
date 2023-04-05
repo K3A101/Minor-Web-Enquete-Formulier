@@ -90,7 +90,7 @@ body {
     margin: 1em;
 }
 
-body > p {
+body>p {
     text-align: center;
     padding: 1em;
 }
@@ -218,7 +218,22 @@ form {
     flex-direction: column;
     background-color: var(--form-achtergrond-kleur);
     padding: .5em;
+    animation: open-form .5s 1 linear;
+    -moz-animation: open-form .5s 1 linear;
+    transform-origin: top;
+    -moz-transform-origin: top;
 }
+
+@keyframes open-form {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
 
 form>fieldset {
     display: flex;
@@ -251,7 +266,7 @@ textarea {
     font-family: var(--paragraaf);
 }
 
-textarea::placeholder{
+textarea::placeholder {
     font-family: var(--paragraaf);
     color: var(--tekst-kleur);
 }
@@ -261,7 +276,7 @@ input[type="email"]:focus,
 textarea:focus {
     outline-style: dashed;
     outline-color: var(--main-kleur);
-    outline-width: 3px;    
+    outline-width: 3px;
 }
 
 
@@ -278,7 +293,7 @@ input[type="radio"] {
 
 }
 
-input::placeholder{
+input::placeholder {
     color: var(--placeholder-kleur);
 }
 
@@ -375,6 +390,7 @@ input[type="email"] {
 #studentgegevens span {
     font-weight: 400;
 }
+
 /******************/
 /* FORM VALILDATE */
 /******************/
@@ -548,7 +564,7 @@ a.vorige-btn:focus {
 
 /* Voor princexml zet de main in min-width: 40em en de rest in 45em */
 @media (min-width: 40em) {
-       main {
+    main {
         margin: 0 auto;
         width: 50%;
         max-width: 50rem;
