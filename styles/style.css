@@ -224,6 +224,17 @@ form {
     -moz-transform-origin: top;
 }
 
+
+@media (prefer-reduced-motion) {
+    form {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--form-achtergrond-kleur);
+        padding: .5em;
+        animation: none;
+    }
+}
+
 @keyframes open-form {
     0% {
         transform: scaleY(0);
