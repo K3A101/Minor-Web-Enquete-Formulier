@@ -218,19 +218,20 @@ form {
     flex-direction: column;
     background-color: var(--form-achtergrond-kleur);
     padding: .5em;
-    animation: open-form .5s 1 linear both;
-    -moz-animation: open-form .5s 1 linear both;
+   
     transform-origin: top;
     -moz-transform-origin: top;
 }
+ @media(prefers-reduced-motion: no-preference) {
 
+form {
+animation: open-form .5s 1 linear both;
+-moz-animation: open-form .5s 1 linear both;
+    }
+ }
 
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
     form {
-        display: flex;
-        flex-direction: column;
-        background-color: var(--form-achtergrond-kleur);
-        padding: .5em;
         animation: none;
     }
 }
